@@ -30,11 +30,12 @@
         android:textSize="33px" />
 
     <Button
-        android:id="@+id/goToList"
+        android:id="@+id/btnGotolist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/login_button"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="60dp"
         android:text="Go to list" />
 
 

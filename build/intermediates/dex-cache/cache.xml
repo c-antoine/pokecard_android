@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="/Users/iem/Desktop/PokeCard/pokecard/pokecardandroid-devAntoine/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="dbbd46a88305238a660d4a025da4e99bbf7b1e0a">
+        <dex dex="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8746e7119172938794b3e07004bc476da53b0cfc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/iem/Desktop/PokeCard/pokecard/pokecardandroid-devAntoine/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_7ba6b0fb0bfb7cbd982ae80b62e0b10e06f175d0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/iem/Desktop/PokeCard/pokecard/pokecardandroid-devAntoine/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="20bf9127f174411e81900cfe26f9c5b9db1896ad">
-        <dex dex="/Users/iem/Desktop/PokeCard/pokecard/pokecardandroid-devAntoine/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_ff53a2c72dab40bfe20c94324cbf7fdb8b5b7245/classes.dex" />
+        <dex dex="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_16d5535c8ab86c48fe983436659c74324c36f10f/classes.dex" />
     </item>
 
 </items>
