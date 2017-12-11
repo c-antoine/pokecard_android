@@ -3,12 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/iem/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="dbbd46a88305238a660d4a025da4e99bbf7b1e0a">
-        <dex dex="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8746e7119172938794b3e07004bc476da53b0cfc/classes.dex" />
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.6.0_8bd995504140c4c69fe4d82e41e5b7e51c1a5174/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/iem/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.0.2/43eeae0b9fb087bb3194ba59ab63a38a32fbf3e/retrofit-2.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
+        <dex dex="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.0.2_2c7abf12fa4c731b1be88730ace7d9c39364d8c1/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -18,6 +27,42 @@
         revision="25.0.3"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_16d5535c8ab86c48fe983436659c74324c36f10f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/iem/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.9.0/a681c044244d9fc375198588297a39ba78028423/retrofit-1.9.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a681c044244d9fc375198588297a39ba78028423">
+        <dex dex="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-1.9.0_d477b159bc1c563a0ab1e25b510b699a49caa243/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/iem/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.0.2/f8d87f15b94b8d74e7ccf61d7eedb558811cdb30/converter-gson-2.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
+        <dex dex="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.0.2_920541e9e950a4f5cd04daa3db0956306c7c2dd0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/iem/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.2.0/f7873a2ebde246a45c2a8d6f3247108b4c88a879/okhttp-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.2.0_e5185a015fed6fc76b38999583a7a2f1b2ad0378/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c7ee2b1a92149b261fec805a4c8b5fecba48add7">
+        <dex dex="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8746e7119172938794b3e07004bc476da53b0cfc/classes.dex" />
     </item>
 
 </items>

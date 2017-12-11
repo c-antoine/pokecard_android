@@ -24,10 +24,13 @@ public class UserProfile extends AppCompatActivity {
         TextView user_name = (TextView) findViewById(R.id.UserName);
         ImageView user_picture = (ImageView) findViewById(R.id.profilePic);
         TextView user_email = (TextView) findViewById(R.id.email);
+        TextView user_id = (TextView) findViewById(R.id.UserId);
+
         try {
             response = new JSONObject(jsondata);
             user_email.setText(response.get("email").toString());
             user_name.setText(response.get("name").toString());
+            user_id.setText(response.get("id").toString());
             profile_pic_data = new JSONObject(response.get("picture").toString());
             profile_pic_url = new JSONObject(profile_pic_data.getString("data"));
             Picasso.with(this).load(profile_pic_url.getString("url"))
