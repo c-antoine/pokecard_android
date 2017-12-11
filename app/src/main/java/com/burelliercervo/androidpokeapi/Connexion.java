@@ -27,6 +27,7 @@ public class Connexion extends AppCompatActivity {
     CallbackManager callbackManager;
 /*
     TextView t=(TextView)findViewById(R.id.tvAffichePokemon);
+
 */
 
 
