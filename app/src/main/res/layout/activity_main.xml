@@ -22,9 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/connexionfailed"
-            android:layout_alignEnd="@+id/tvClementB"
-            android:layout_alignRight="@+id/tvClementB"
-            android:layout_marginBottom="16dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="14dp"
             android:text="Go to list" />
 
         <com.facebook.login.widget.LoginButton
@@ -84,7 +83,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
             app:srcCompat="@mipmap/pokecard" />
 
 

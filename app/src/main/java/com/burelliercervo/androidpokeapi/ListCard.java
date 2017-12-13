@@ -6,29 +6,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import okhttp3.OkHttpClient;
-import retrofit.Callback;
-import retrofit.ErrorHandler;
-import retrofit.RequestInterceptor;
-import retrofit.RestAdapter;
-import retrofit.RetrofitError;
-import retrofit.android.AndroidLog;
-import retrofit.client.Response;
-
-
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ListCard extends AppCompatActivity {
 
-    //    public static final String URL = "https://pokeapi.co/api/v2/pokedex/1/";
     MyListAdapter myListAdapter;
     private ListView mListView;
     private List<Pokemon> pokemons = new ArrayList<>();
+    private int offset = 0;
 
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
@@ -36,32 +31,6 @@ public class ListCard extends AppCompatActivity {
 //        setContentView(R.layout.activity_list_card);
 //        pokemons.add(new Pokemon("Dracaufeu", "24", "Feu"));
 //        pokemons.add(new Pokemon("Bulbizar", "38", "Eau"));
-//        pokemons.add(new Pokemon("Dracaufeu", "24", "Feu"));
-//        pokemons.add(new Pokemon("Bulbizar", "38", "Eau"));
-//        pokemons.add(new Pokemon("Dracaufeu", "24", "Feu"));
-//        pokemons.add(new Pokemon("Bulbizar", "38", "Eau"));
-//        pokemons.add(new Pokemon("Dracaufeu", "24", "Feu"));
-//        pokemons.add(new Pokemon("Bulbizar", "38", "Eau"));
-//        pokemons.add(new Pokemon("Dracaufeu", "24", "Feu"));
-//        pokemons.add(new Pokemon("Bulbizar", "38", "Eau"));
-//        pokemons.add(new Pokemon("Dracaufeu", "24", "Feu"));
-//        pokemons.add(new Pokemon("Bulbizar", "38", "Eau"));
-//        pokemons.add(new Pokemon("Dracaufeu", "24", "Feu"));
-//        pokemons.add(new Pokemon("Bulbizar", "38", "Eau"));
-//        pokemons.add(new Pokemon("Dracaufeu", "24", "Feu"));
-//        pokemons.add(new Pokemon("Bulbizar", "38", "Eau"));
-//        pokemons.add(new Pokemon("Dracaufeu", "24", "Feu"));
-//        pokemons.add(new Pokemon("Bulbizar", "38", "Eau"));
-//        pokemons.add(new Pokemon("Dracaufeu", "24", "Feu"));
-//        pokemons.add(new Pokemon("Bulbizar", "38", "Eau"));
-//
-//
-//        myListAdapter = new MyListAdapter(pokemons, this);
-//        mListView = (ListView) findViewById(R.id.listview);
-//
-//        mListView.setAdapter(myListAdapter);
-//
-//        myListAdapter.notifyDataSetChanged();
 //
 //
 //    }
@@ -84,19 +53,31 @@ public class ListCard extends AppCompatActivity {
     }
 
     class ListPokemonsTask extends AsyncTask<String,Void,List<Pokemon>> {
-
         @Override
         protected List<Pokemon> doInBackground(String...params) {
-            pokeapiService pokeapiService = new RestAdapter.Builder()
-                    .setEndpoint(com.burelliercervo.androidpokeapi.pokeapiService.ENDPOINT)
-                    .build()
-                    .create(pokeapiService.class);
+//            PokeapiService PokeapiService = new RestAdapter.Builder()
+//                    .setEndpoint(com.burelliercervo.androidpokeapi.PokeapiService.ENDPOINT)
+//                    .build()
+//                    .create(PokeapiService.class);
 
 
+            //String user = params[0];
+            offset = 0;
 
+            List<Pokemon> pokemons = new ArrayList<>();
 
-            String user = params[0];
-            pokemons = pokeapiService.listPokemon(user);
+            PokeapiService service = initRetrofit();
+
+            Call<List<Pokemon>> call =  service.listPokemon(20, offset);
+            try {
+                Response<List<Pokemon>> response =  call.execute();
+                if(response.isSuccessful()) {
+                    pokemons = response.body();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
             return pokemons;
         }
 
@@ -105,6 +86,29 @@ public class ListCard extends AppCompatActivity {
             super.onPostExecute(Pokemons);
             afficherPokemons(Pokemons);
         }
+    }
+
+
+    private PokeapiService initRetrofit() {
+        Retrofit.Builder mBuilder =
+                new Retrofit.Builder()
+                        .baseUrl("https://pokeapi.co/api/v2/")
+                        //.baseUrl("http://localhost:8888/")
+                        .addConverterFactory(GsonConverterFactory.create());
+
+        OkHttpClient.Builder okBuilder = new OkHttpClient.Builder();
+
+        //if (BuildConfig.DEBUG) {
+            HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+
+            logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+            okBuilder.addInterceptor(logging);
+        //}
+        okBuilder.readTimeout(1, TimeUnit.MINUTES);
+//          pokemons = PokeapiService.listPokemon(20, offset);
+        OkHttpClient httpClient = okBuilder.build();
+        Retrofit retrofit = mBuilder.client(httpClient).build();
+        return retrofit.create(PokeapiService.class);
     }
 
 }
