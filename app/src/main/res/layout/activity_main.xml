@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
@@ -9,34 +10,85 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Connexion">
 
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="150dp" />
-
-    <EditText
-        android:id="@+id/connexionfailed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:inputType="textPersonName"
-        android:text="Vous n'êtes connecté à aucun réseau wifi ou 3G"
-        android:textSize="33px" />
+        android:layout_alignParentTop="true">
 
-    <Button
-        android:id="@+id/btnGotolist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/login_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:text="Go to list" />
+        <Button
+            android:id="@+id/btnGotolist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/connexionfailed"
+            android:layout_alignEnd="@+id/tvClementB"
+            android:layout_alignRight="@+id/tvClementB"
+            android:layout_marginBottom="16dp"
+            android:text="Go to list" />
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnGotolist"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="17dp" />
+
+        <EditText
+            android:id="@+id/connexionfailed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:inputType="textPersonName"
+            android:text="Vous n'êtes connecté à aucun réseau wifi ou 3G"
+            android:textSize="33px" />
+
+        <TextView
+            android:id="@+id/tvMadeBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tvAntoineC"
+            android:layout_alignLeft="@+id/login_button"
+            android:layout_alignStart="@+id/login_button"
+            android:text="Made By"
+            android:textSize="25sp" />
+
+
+
+        <TextView
+            android:id="@+id/tvAntoineC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tvClementB"
+            android:layout_alignLeft="@+id/tvClementB"
+            android:layout_alignStart="@+id/tvClementB"
+            android:text="Antoine C"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/tvClementB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvMadeBy"
+            android:layout_alignStart="@+id/tvMadeBy"
+            android:layout_centerVertical="true"
+            android:text="Clément B."
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@mipmap/pokecard" />
+
+
+    </RelativeLayout>
 
 
 </RelativeLayout>

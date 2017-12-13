@@ -18,6 +18,8 @@ import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.android.AndroidLog;
 import retrofit.client.Response;
+
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -73,18 +75,12 @@ public class ListCard extends AppCompatActivity {
     }
 
     public void afficherPokemons(List<Pokemon> Pokemons) {
-        //Pokemons.add(new Pokemon("Bulbizar", "38", "Eau"));
 
         myListAdapter = new MyListAdapter(pokemons, this);
         mListView = (ListView) findViewById(R.id.listview);
-//
         mListView.setAdapter(myListAdapter);
-//
         myListAdapter.notifyDataSetChanged();
         Toast.makeText(this,"nombre de Pokemon : "+Pokemons.size(),Toast.LENGTH_SHORT).show();
-
-
-
     }
 
     class ListPokemonsTask extends AsyncTask<String,Void,List<Pokemon>> {
@@ -96,12 +92,12 @@ public class ListCard extends AppCompatActivity {
                     .build()
                     .create(pokeapiService.class);
 
+
+
+
             String user = params[0];
-//            List<Pokemon> PokemonList = pokeapiService.listPokemon("123");
-            //List<Pokemon> PokemonList = pokeapiService.listPokemon("123");
-            List<Pokemon> PokemonList = pokeapiService.listRepos(user);
-            //List PokemonList = pokeapiService.listPokemon("123");
-            return PokemonList;
+            pokemons = pokeapiService.listPokemon(user);
+            return pokemons;
         }
 
         @Override

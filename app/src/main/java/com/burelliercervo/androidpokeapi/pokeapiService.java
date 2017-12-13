@@ -19,20 +19,13 @@ import static com.facebook.HttpMethod.GET;
 
 public interface pokeapiService {
 
-    public static final String ENDPOINT = "https://api.github.com";
+    public static final String ENDPOINT = "https://pokeapi.co/api/v2/pokemon";
 
 
-//    @GET("/user")
-//    List<Pokemon> listPokemon(@Query("id") String query);
-
-    @GET("/users/{user}/repos")
-    List<Pokemon> listRepos(@Path("user") String user);
-//    @GET("search/{id}")
-//    Call<List<Pokemon>> listPokemon(@Path("id")String id);
 
 
-//    @GET("/users/{id}")
-//    List<Pokemon> listPokemon(@Path("id") String name);
+    @GET("/1")
+    List<Pokemon> listPokemon(@Path("weight") String user);
 
 //    @GET("/search/repositories")
 //    List<Repo> searchRepos(@Query("q") String query);
