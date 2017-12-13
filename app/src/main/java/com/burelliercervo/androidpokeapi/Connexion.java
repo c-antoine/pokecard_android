@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ public class Connexion extends AppCompatActivity {
     CallbackManager callbackManager;
 /*
     TextView t=(TextView)findViewById(R.id.tvAffichePokemon);
+
 */
 
 
@@ -73,12 +75,15 @@ public class Connexion extends AppCompatActivity {
         String url1 = "https://pokeapi.co/api/v2/pokedex/1/";
 //        new RetrieveFeedTask().execute(url1);
 
-      /*  Button btnAffichePokemon = (Button) findViewById(R.id.btnAffichePokemon);
-        btnAffichePokemon.setOnClickListener(new View.OnClickListener() {
+        Button buttonList = (Button) findViewById(R.id.btnGotolist);
+        buttonList.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //t.setText(param[0]);
+                Intent intent = new Intent(Connexion.this, ListCard.class);
+
+                startActivity(intent);
             }
-        });*/
+        });
     }
 
     @Override
