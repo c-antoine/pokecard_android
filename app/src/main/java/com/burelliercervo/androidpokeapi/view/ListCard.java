@@ -1,10 +1,15 @@
-package com.burelliercervo.androidpokeapi;
+package com.burelliercervo.androidpokeapi.view;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.burelliercervo.androidpokeapi.adapter.MyListAdapter;
+import com.burelliercervo.androidpokeapi.service.PokeapiService;
+import com.burelliercervo.androidpokeapi.model.Pokemon;
+import com.burelliercervo.androidpokeapi.R;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,7 +18,6 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -43,20 +47,20 @@ public class ListCard extends AppCompatActivity {
 
     }
 
-    public void afficherPokemons(List<Pokemon> Pokemons) {
+    public void afficherPokemons(List<Pokemon> PokemonsList) {
 
-        myListAdapter = new MyListAdapter(pokemons, this);
+        myListAdapter = new MyListAdapter(PokemonsList, this);
         mListView = (ListView) findViewById(R.id.listview);
         mListView.setAdapter(myListAdapter);
         myListAdapter.notifyDataSetChanged();
-        Toast.makeText(this,"nombre de Pokemon : "+Pokemons.size(),Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"nombre de Pokemon : "+PokemonsList.size(),Toast.LENGTH_SHORT).show();
     }
 
     class ListPokemonsTask extends AsyncTask<String,Void,List<Pokemon>> {
         @Override
         protected List<Pokemon> doInBackground(String...params) {
 //            PokeapiService PokeapiService = new RestAdapter.Builder()
-//                    .setEndpoint(com.burelliercervo.androidpokeapi.PokeapiService.ENDPOINT)
+//                    .setEndpoint(com.burelliercervo.androidpokeapi.service.PokeapiService.ENDPOINT)
 //                    .build()
 //                    .create(PokeapiService.class);
 
@@ -68,7 +72,7 @@ public class ListCard extends AppCompatActivity {
 
             PokeapiService service = initRetrofit();
 
-            Call<List<Pokemon>> call =  service.listPokemon(20, offset);
+            Call<List<Pokemon>> call =  service.listPokemon("auth", 1);
             try {
                 Response<List<Pokemon>> response =  call.execute();
                 if(response.isSuccessful()) {
@@ -92,7 +96,7 @@ public class ListCard extends AppCompatActivity {
     private PokeapiService initRetrofit() {
         Retrofit.Builder mBuilder =
                 new Retrofit.Builder()
-                        .baseUrl("https://pokeapi.co/api/v2/")
+                        .baseUrl("http://antoinecervo.com/")
                         //.baseUrl("http://localhost:8888/")
                         .addConverterFactory(GsonConverterFactory.create());
 

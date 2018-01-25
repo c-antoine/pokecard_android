@@ -3,21 +3,30 @@
 
     <item
         is-multidex="true"
-        jar="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="C:\Users\Cervo\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.8.0\9bada650e1afe9c6174ddc0d113c1fce4dc26fe0\glide-3.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9bada650e1afe9c6174ddc0d113c1fce4dc26fe0">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.8.0_91dc617941743de793d4c5b62d6daca0de9f7fda\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_16d5535c8ab86c48fe983436659c74324c36f10f/classes.dex" />
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_73629a035d0e893cb490bc20748e4dcbb772faec\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="4f2bd9cb3e24afb100568762cc7ed539cf596ce4">
-        <dex dex="/Users/iem/Desktop/pokeAPI_android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8746e7119172938794b3e07004bc476da53b0cfc/classes.dex" />
+        sha1="f9092e78824603a0c0cb0c24285474276df7032b">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_5a42f1256c7be01e080427c6451c9557ccb82132\classes.dex" />
     </item>
 
 </items>

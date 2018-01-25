@@ -5,7 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/facebook/facebook.iml" filepath="$PROJECT_DIR$/libraries/facebook/facebook.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/libraries.iml" filepath="$PROJECT_DIR$/libraries/libraries.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pokeAPI_android.iml" filepath="$PROJECT_DIR$/pokeAPI_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pokecard_android.iml" filepath="$PROJECT_DIR$/pokecard_android.iml" />
     </modules>
   </component>
 </project>

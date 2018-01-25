@@ -1,4 +1,4 @@
-package com.burelliercervo.androidpokeapi;
+package com.burelliercervo.androidpokeapi.model;
 
 /**
  * Created by iem on 14/11/2017.
@@ -9,11 +9,20 @@ public class Pokemon {
     private int id;
     private String name;
     private String xp;
-    private String type;
+    private String[] type;
     private String height;
-    private String width;
+    private String weight;
+    private String sprite;
 
-    public Pokemon(String name, String xp, String type){
+    public String getSprite() {
+        return sprite;
+    }
+
+    public void setSprite(String sprite) {
+        this.sprite = sprite;
+    }
+
+    public Pokemon(String name, String xp, String[] type){
         this.name = name;
         this.xp = xp;
         this.type = type;
@@ -24,8 +33,12 @@ public class Pokemon {
     }
 
     public String getType() {
-
-        return type;
+        int i;
+        String toReturn="";
+        for(i=0;i<type.length;i++){
+            toReturn=toReturn+ " / " + type[i];
+        }
+        return toReturn;
     }
 
     public int getId(){
@@ -45,8 +58,8 @@ public class Pokemon {
         return height;
     }
 
-    public String getWidth(){
-        return width;
+    public String getWeight(){
+        return weight;
     }
 
 

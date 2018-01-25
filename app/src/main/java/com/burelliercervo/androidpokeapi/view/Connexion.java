@@ -1,4 +1,4 @@
-package com.burelliercervo.androidpokeapi;
+package com.burelliercervo.androidpokeapi.view;
 
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -9,8 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.burelliercervo.androidpokeapi.R;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -21,8 +21,6 @@ import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
 import org.json.JSONObject;
-
-import java.net.URL;
 
 public class Connexion extends AppCompatActivity {
     CallbackManager callbackManager;

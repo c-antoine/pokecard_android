@@ -1,4 +1,4 @@
-package com.burelliercervo.androidpokeapi;
+package com.burelliercervo.androidpokeapi.view;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.burelliercervo.androidpokeapi.R;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
