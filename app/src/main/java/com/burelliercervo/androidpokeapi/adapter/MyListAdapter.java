@@ -2,9 +2,11 @@ package com.burelliercervo.androidpokeapi.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -83,5 +85,14 @@ public class MyListAdapter extends BaseAdapter {
         public TextView xp;
         public TextView type;
         public ImageView sprite;
+
+//        public void onCreateViewHolder()
+
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(String pageId, String name);
+        void onModifClickItem();
+        void onRemoveClickItem(String pageId);
     }
 }

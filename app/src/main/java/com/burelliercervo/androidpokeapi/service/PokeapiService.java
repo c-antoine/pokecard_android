@@ -9,6 +9,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 /**
@@ -17,7 +18,10 @@ import retrofit2.http.Query;
 
 public interface PokeapiService {
 
-    @GET("pokecardAPI")
-    Call<List<Pokemon>> listPokemon(@Query("action") String action, @Query("user")int user);
+    @GET("?action=auth&")
+    Call<List<Pokemon>> listPokemon(@Query("user")int user);
+
+    @GET("?action=details&")
+    Call<Pokemon> Pokemon(@Query("card")int id_card);
 
 }
