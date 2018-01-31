@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -39,6 +40,16 @@ public class ListCard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_card);
          new ListPokemonsTask().execute("1");
+
+
+        Button btnTest = (Button) findViewById(R.id.btnTest);
+        btnTest.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent myIntent = new Intent(ListCard.this, DetailCard.class);
+                ListCard.this.startActivity(myIntent);
+            }
+        });
+
     }
 
     public void afficherPokemons(List<Pokemon> PokemonsList) {
