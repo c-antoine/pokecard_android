@@ -2,31 +2,13 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Users\Cervo\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.8.0\9bada650e1afe9c6174ddc0d113c1fce4dc26fe0\glide-3.8.0.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/iem/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.8.0/9bada650e1afe9c6174ddc0d113c1fce4dc26fe0/glide-3.8.0.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
         sha1="9bada650e1afe9c6174ddc0d113c1fce4dc26fe0">
-        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.8.0_91dc617941743de793d4c5b62d6daca0de9f7fda\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_73629a035d0e893cb490bc20748e4dcbb772faec\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="f9092e78824603a0c0cb0c24285474276df7032b">
-        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_5a42f1256c7be01e080427c6451c9557ccb82132\classes.dex" />
+        <dex dex="/Users/iem/Documents/projets/pokecard_android/app/build/intermediates/pre-dexed/debug/glide-3.8.0_71161336876cc9c5c0fde2ba659f36c030a0aa1a.jar" />
     </item>
 
 </items>
