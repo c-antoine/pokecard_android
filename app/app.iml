@@ -105,6 +105,7 @@
     <orderEntry type="library" exported="" name="com.parse.bolts:bolts-tasks:1.4.0@jar" level="project" />
     <orderEntry type="library" exported="" name="com.parse.bolts:bolts-applinks:1.4.0@jar" level="project" />
     <orderEntry type="library" exported="" name="com.squareup.retrofit2:converter-gson:2.0.2@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.github.bumptech.glide:glide:3.8.0@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support.constraint:constraint-layout-solver:1.0.2@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-core-utils-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="com.facebook.android:facebook-messenger-4.27.0" level="project" />
@@ -129,5 +130,6 @@
     <orderEntry type="library" exported="" name="com.facebook.android:facebook-applinks-4.27.0" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:customtabs-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-annotations:25.3.1@jar" level="project" />
+    <orderEntry type="library" exported="" name="android-android-24" level="project" />
   </component>
 </module>
