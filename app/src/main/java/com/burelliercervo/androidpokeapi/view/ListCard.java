@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.burelliercervo.androidpokeapi.adapter.MyListAdapter;
@@ -18,6 +20,7 @@ import com.burelliercervo.androidpokeapi.R;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -25,6 +28,8 @@ import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 //implements MyListAdapter.OnItemClickListener
 
@@ -45,12 +50,17 @@ public class ListCard extends AppCompatActivity {
         Button btnTest = (Button) findViewById(R.id.btnTest);
         btnTest.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent myIntent = new Intent(ListCard.this, DetailCard.class);
-                ListCard.this.startActivity(myIntent);
+
             }
         });
 
+
     }
+
+//    @Override
+//    public void onItemClick(String pageId, String name) {
+//
+//    }
 
     public void afficherPokemons(List<Pokemon> PokemonsList) {
 
@@ -59,12 +69,26 @@ public class ListCard extends AppCompatActivity {
         mListView.setAdapter(myListAdapter);
         myListAdapter.notifyDataSetChanged();
         Toast.makeText(this,"nombre de Pokemon : "+PokemonsList.size(),Toast.LENGTH_SHORT).show();
+
+        mListView.setClickable(true);
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+
+                Object o = mListView.getItemAtPosition(position);
+                Log.d("TAG", "onItemClick: " + o);
+                Intent myIntent = new Intent(ListCard.this, DetailCard.class);
+                ListCard.this.startActivity(myIntent);
+                myIntent.putExtra(EXTRA_MESSAGE, o.toString());
+                startActivityForResult(myIntent, 0);
+
+
+            }
+        });
     }
 
-//    @Override
-//    public void onItemClick(String pageId, String name) {
-//
-//    }
+
 
     class ListPokemonsTask extends AsyncTask<String,Void,List<Pokemon>> {
         @Override
@@ -117,6 +141,8 @@ public class ListCard extends AppCompatActivity {
         Retrofit retrofit = mBuilder.client(httpClient).build();
         return retrofit.create(PokeapiService.class);
     }
+
+
 }
 
 

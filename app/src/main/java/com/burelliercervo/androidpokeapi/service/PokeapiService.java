@@ -18,11 +18,11 @@ import retrofit2.http.Query;
 
 public interface PokeapiService {
 
-    @GET("?action=auth&")
+    @GET("?action=cardlist&")
     Call<List<Pokemon>> listPokemon(@Query("user")int user);
 
-//    @GET("?action=details&")
-//    Call<Pokemon> Pokemon(@Query("card")int id_card);
+    @GET("?action=details&")
+    Call<Pokemon> Pokemon(@Query("card")int id_card);
 
 
 

@@ -58,12 +58,13 @@ public class MyListAdapter extends BaseAdapter {
 
             //  Liaison tampon view
             itemHolder = new ItemHolder();
+            itemHolder.name = (TextView) view.findViewById(R.id.pokeName);
             itemHolder.xp = (TextView) view.findViewById(R.id.pokeXp);
             itemHolder.type = (TextView) view.findViewById(R.id.pokeType);
             itemHolder.sprite = (ImageView) view.findViewById(R.id.pokemonVSprite);
             view.setTag(itemHolder);
         } else {
-            //Recyclage avec récupération du holder
+            //Recyclage avec revcupération du holder
             itemHolder = (ItemHolder) view.getTag();
         }
         // Attributions des données
