@@ -47,20 +47,8 @@ public class ListCard extends AppCompatActivity {
          new ListPokemonsTask().execute("1");
 
 
-        Button btnTest = (Button) findViewById(R.id.btnTest);
-        btnTest.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-            }
-        });
-
-
     }
 
-//    @Override
-//    public void onItemClick(String pageId, String name) {
-//
-//    }
 
     public void afficherPokemons(List<Pokemon> PokemonsList) {
 
@@ -129,14 +117,12 @@ public class ListCard extends AppCompatActivity {
 
         OkHttpClient.Builder okBuilder = new OkHttpClient.Builder();
 
-        //if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
 
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);
             okBuilder.addInterceptor(logging);
-        //}
+
         okBuilder.readTimeout(1, TimeUnit.MINUTES);
-//          pokemons = PokeapiService.listPokemon(20, offset);
         OkHttpClient httpClient = okBuilder.build();
         Retrofit retrofit = mBuilder.client(httpClient).build();
         return retrofit.create(PokeapiService.class);
