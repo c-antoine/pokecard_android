@@ -1,5 +1,6 @@
 package com.burelliercervo.androidpokeapi.view;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -50,12 +51,13 @@ public class ListCard extends AppCompatActivity {
     }
 
 
-    public void afficherPokemons(List<Pokemon> PokemonsList) {
+    public void afficherPokemons(final List<Pokemon> PokemonsList) {
 
         myListAdapter = new MyListAdapter(PokemonsList, this);
         mListView = (ListView) findViewById(R.id.listview);
         mListView.setAdapter(myListAdapter);
         myListAdapter.notifyDataSetChanged();
+
         Toast.makeText(this,"nombre de Pokemon : "+PokemonsList.size(),Toast.LENGTH_SHORT).show();
 
         mListView.setClickable(true);
@@ -64,11 +66,12 @@ public class ListCard extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
 
-                Object o = mListView.getItemAtPosition(position);
+                Pokemon o = (Pokemon) mListView.getItemAtPosition(position);
                 Log.d("TAG", "onItemClick: " + o);
                 Intent myIntent = new Intent(ListCard.this, DetailCard.class);
                 ListCard.this.startActivity(myIntent);
-                myIntent.putExtra(EXTRA_MESSAGE, o.toString());
+                myIntent.putExtra(EXTRA_MESSAGE,  o.getId());
+
                 startActivityForResult(myIntent, 0);
 
 

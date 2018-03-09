@@ -45,54 +45,61 @@
         ></Button>
 
     <TextView
-    android:id="@+id/tvLevel"
-    android:layout_width="210dp"
-    android:layout_height="25dp"
-    android:layout_marginTop="10dp"
-    android:text="Level : "
-    app:layout_constraintTop_toBottomOf="@id/SpinnerChoice"
-    app:layout_constraintLeft_toRightOf="@id/tvPokemonName"
+        android:id="@+id/tvLevel"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="1dp"
+        android:text="Level : "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/tvPokemonName"
 
-    />
+        app:layout_constraintTop_toBottomOf="@id/SpinnerChoice" />
 
     <TextView
         android:id="@+id/tvAbility"
-        android:layout_width="210dp"
+        android:layout_width="190dp"
         android:layout_height="25dp"
+        android:layout_marginRight="1dp"
         android:layout_marginTop="10dp"
         android:text="Ability : "
-        app:layout_constraintTop_toBottomOf="@id/tvLevel"
-        app:layout_constraintLeft_toRightOf="@id/tvPokemonName"
+        app:layout_constraintEnd_toEndOf="parent"
 
-        />
+        app:layout_constraintLeft_toRightOf="@id/tvPokemonName"
+        app:layout_constraintTop_toBottomOf="@id/tvLevel" />
+
     <TextView
         android:id="@+id/tvDefense"
-        android:layout_width="210dp"
+        android:layout_width="190dp"
         android:layout_height="25dp"
+        android:layout_marginRight="1dp"
         android:layout_marginTop="10dp"
         android:text="Defense : "
-        app:layout_constraintTop_toBottomOf="@id/tvAbility"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toRightOf="@id/tvPokemonName"
-        />
+        app:layout_constraintTop_toBottomOf="@id/tvAbility" />
+
     <TextView
         android:id="@+id/tvSpeed"
-        android:layout_width="210dp"
+        android:layout_width="190dp"
         android:layout_height="25dp"
+        android:layout_marginRight="1dp"
         android:layout_marginTop="10dp"
         android:text="Speed : "
-        app:layout_constraintTop_toBottomOf="@id/tvDefense"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toRightOf="@id/tvPokemonName"
-        />
+        app:layout_constraintTop_toBottomOf="@id/tvDefense" />
 
     <TextView
         android:id="@+id/tvAttack"
-        android:layout_width="210dp"
+        android:layout_width="190dp"
         android:layout_height="25dp"
+        android:layout_marginRight="1dp"
         android:layout_marginTop="10dp"
         android:text="Attack : "
-        app:layout_constraintTop_toBottomOf="@id/tvSpeed"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toRightOf="@id/tvPokemonName"
-        />
+        app:layout_constraintTop_toBottomOf="@id/tvSpeed" />
     
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/imageViewSprite"

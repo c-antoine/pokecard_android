@@ -5,9 +5,11 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.burelliercervo.androidpokeapi.R;
 import com.burelliercervo.androidpokeapi.model.Pokemon;
 import com.burelliercervo.androidpokeapi.service.PokeapiService;
@@ -38,7 +40,8 @@ public class DetailCard extends AppCompatActivity {
         final Intent intent = getIntent();
 
         String message = intent.getStringExtra(EXTRA_MESSAGE);
-        getData(10);
+        int id = Integer.parseInt(message.toString());
+        getData(id);
 
     }
 
@@ -51,14 +54,18 @@ public class DetailCard extends AppCompatActivity {
                 .build();
         PokeapiService service = mBuilderofit.create(PokeapiService.class);
 
-        Call<Pokemon> call =  service.Pokemon(10);
+        Call<Pokemon> call =  service.Pokemon(id);
         call.enqueue(new Callback<Pokemon>() {
             @Override
             public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
                 if (response.isSuccessful()) {
                     Pokemon pokemon = response.body();
-                    Toast.makeText(getApplicationContext(),
-                            pokemon.getName(), Toast.LENGTH_LONG).show();
+
+                    TextView tvName = (TextView)findViewById(R.id.tvPokemonName);
+                    tvName.setText(pokemon.getName());
+                    TextView tvLevel = (TextView)findViewById(R.id.tvLevel);
+                    tvLevel.setText("Level : " + pokemon.getXp());
+                    ImageView imageSprite = (ImageView)findViewById(R.id.imageViewSprite);
 
 
                 } else {

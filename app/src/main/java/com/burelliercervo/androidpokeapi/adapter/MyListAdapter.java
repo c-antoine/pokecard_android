@@ -1,6 +1,7 @@
 package com.burelliercervo.androidpokeapi.adapter;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -14,6 +15,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.burelliercervo.androidpokeapi.R;
 import com.burelliercervo.androidpokeapi.model.Pokemon;
+import com.burelliercervo.androidpokeapi.view.ListCard;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -58,6 +62,7 @@ public class MyListAdapter extends BaseAdapter {
 
             //  Liaison tampon view
             itemHolder = new ItemHolder();
+            //itemHolder.id = (TextView) view.findViewById(R.id.pokeId);
             itemHolder.name = (TextView) view.findViewById(R.id.pokeName);
             itemHolder.xp = (TextView) view.findViewById(R.id.pokeXp);
             itemHolder.type = (TextView) view.findViewById(R.id.pokeType);
@@ -68,6 +73,8 @@ public class MyListAdapter extends BaseAdapter {
             itemHolder = (ItemHolder) view.getTag();
         }
         // Attributions des données
+
+        //itemHolder.id.setText(pokemons.get(position).getId());
         itemHolder.name.setText(pokemons.get(position).getName());
         itemHolder.xp.setText(pokemons.get(position).getXp());
         itemHolder.type.setText(pokemons.get(position).getType());
@@ -81,6 +88,7 @@ public class MyListAdapter extends BaseAdapter {
     }
 
     private class ItemHolder {
+        public TextView id;
         public TextView name;
         public TextView xp;
         public TextView type;

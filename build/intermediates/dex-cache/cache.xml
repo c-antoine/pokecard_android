@@ -2,13 +2,22 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="/Users/iem/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.8.0/9bada650e1afe9c6174ddc0d113c1fce4dc26fe0/glide-3.8.0.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/Users/clement/Documents/androidprojet/pokecard_android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="9bada650e1afe9c6174ddc0d113c1fce4dc26fe0">
-        <dex dex="/Users/iem/Documents/projets/pokecard_android/app/build/intermediates/pre-dexed/debug/glide-3.8.0_71161336876cc9c5c0fde2ba659f36c030a0aa1a.jar" />
+        sha1="8805a9ba9d46a92b1c9974be453730f6b47fb668">
+        <dex dex="/Users/clement/Documents/androidprojet/pokecard_android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_f1eab3d9b49178bd5a012457cb9ef27bc4a76899/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/clement/Documents/androidprojet/pokecard_android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/clement/Documents/androidprojet/pokecard_android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_19b16e3a7b5ec1bd2b70252fa1f8942fa897bc0f/classes.dex" />
     </item>
 
 </items>

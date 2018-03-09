@@ -6,13 +6,14 @@ package com.burelliercervo.androidpokeapi.model;
 
 public class Pokemon {
 
-    private int id;
+    private String id;
     private String name;
     private String xp;
     private String[] type;
     private String height;
     private String weight;
     private String sprite;
+    private String level;
 
     public String getSprite() {
         return sprite;
@@ -22,15 +23,22 @@ public class Pokemon {
         this.sprite = sprite;
     }
 
-    public Pokemon(String name, String xp, String[] type){
+    public Pokemon(String id, String name, String xp, String[] type){
+        this.id = id;
         this.name = name;
         this.xp = xp;
         this.type = type;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
+
 
     public String getType() {
         int i;
@@ -41,7 +49,7 @@ public class Pokemon {
         return toReturn;
     }
 
-    public int getId(){
+    public String getId(){
         return id;
     }
 
@@ -52,6 +60,10 @@ public class Pokemon {
 
     public String getXp(){
         return xp;
+    }
+
+    public String getLevel(){
+        return level;
     }
 
     public String getHeight(){
