@@ -74,7 +74,6 @@ public class MyListAdapter extends BaseAdapter {
         }
         // Attributions des données
 
-        //itemHolder.id.setText(pokemons.get(position).getId());
         itemHolder.name.setText(pokemons.get(position).getName());
         itemHolder.xp.setText(pokemons.get(position).getXp());
         itemHolder.type.setText(pokemons.get(position).getType());

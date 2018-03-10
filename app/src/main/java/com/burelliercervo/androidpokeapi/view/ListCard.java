@@ -2,6 +2,7 @@ package com.burelliercervo.androidpokeapi.view;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.opengl.Visibility;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -103,8 +104,16 @@ public class ListCard extends AppCompatActivity {
             return pokemons;
         }
 
+        private final ProgressDialog dialog = new ProgressDialog(ListCard.this);
+
+        protected void onPreExecute() {
+            this.dialog.setMessage("loading...");
+            this.dialog.show();
+        }
+
         @Override
         protected void onPostExecute(List<Pokemon> Pokemons) {
+            this.dialog.dismiss();
             super.onPostExecute(Pokemons);
             afficherPokemons(Pokemons);
         }
