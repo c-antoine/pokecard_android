@@ -3,21 +3,372 @@
 
     <item
         is-multidex="true"
-        jar="/Users/iem/AndroidStudioProjects/pokecard_android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="C:\Users\Cervo\.android\build-cache\a454ef43e6c96ff212a533b5e422303054080a79\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="d9171338f2d514bccc2b08bfa7d0bf0ca55af743">
-        <dex dex="/Users/iem/AndroidStudioProjects/pokecard_android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8da9296d8b19cc4602c8d3eea74814bffeaffe35/classes.dex" />
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ccbe5d5c48768af4be1224ada9744693fc72c5c7\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_0e0599c542ec301b5708f6f840d4b4a96b830125.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\59f10fd609da5e71ea4b51a0c2a14a243593c28a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_d87c18dedfb32bf8d9e74eefb41de44b89ace2a9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.8.0\9bada650e1afe9c6174ddc0d113c1fce4dc26fe0\glide-3.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9bada650e1afe9c6174ddc0d113c1fce4dc26fe0">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\glide-3.8.0_91dc617941743de793d4c5b62d6daca0de9f7fda.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\okio-1.13.0_0b531f4cc1887f4c7bf412b5fc70dfbd84420b51.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\07fc4970fa8c18150985383e74b281bed6f4ee23\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0d394688dd7030b83dea8eed3fa483410c24afe0">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_188a45dd65d191d437fcb0e72225776fb37dbadd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\gson-2.7_31dacee41a4de8645b4d486edd43ee0666ea0f6b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\46b2c43ad1b6573ac30aa302ec6e41af93bac7b2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_5c82b62c0e1cced929f68adaab27f4f36e1771a7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\a454ef43e6c96ff212a533b5e422303054080a79\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_ccbe5d5c48768af4be1224ada9744693fc72c5c7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\a190642111736b0727ab8383c151d41ad936fa94\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="82ea5a937ab84229fbd2f3fc8cf2a72cbdf0ee0f">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_e946998ee019c660a1a8de062d19c2bc476b586e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\88b969579d96d0fedc195dd70112e3c870760fdb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9a0c96cb2e74d3a6e692d920c9e03326e77f6429">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_d0e781813e63340254aecefcc475caa4acc2feac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\666e82c621dd3f97785c7b6e40b457d4eeef644f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_9e0d276dc0de0fd68399c0142773f68b227d3cda.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\18c0148da3ba461f21e492486d682260d957a1ad\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_253dd711a8ae82f6c5617960170852c1be9f0eb3.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/iem/AndroidStudioProjects/pokecard_android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="C:\Users\Cervo\.android\build-cache\666e82c621dd3f97785c7b6e40b457d4eeef644f\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9e0d276dc0de0fd68399c0142773f68b227d3cda\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\2b461eb4d6a6ee802e174abfbec13bcd1db5a658\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_d7d76ad9bb2df9e6cb36b1c96286338186c49605.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.2\43eeae0b9fb087bb3194ba59ab63a38a32fbf3e\retrofit-2.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\retrofit-2.0.2_f0d40293296719cff748082a280be797ea6c5a31.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\b6fbf00b0b20fe137f68c95911bb709b20bb720a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_e65f949e8f8561056b3c3a695fb2911a5c6a8079.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_2c62f057200d55291d3f6739a418ea4c1b908243.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\bc66ae353d34431f27d6381968242332c9dbe3c9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_1dd3255b457c21fc322e0eb2aa06263608a71033.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\fd49bd6498378ce161709b2282ad88e40f39a34f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_4f7974b90686ba7022c946981c878a85f46d938b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\ebf6b27eb3dd81c55c614dc6b1c5afffa37fb4b9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bc9ea2bc291bbebc83f5b160d115c699bddc4e16">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_94870603cdfc11fa2a380b598a2953d159c3fbfb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\6c54a9705269c3bc3d97c026b9a087de26a23332\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2482bfd874e8b3927f4141105674ad392ff83698">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_d67f12b4f96e77ecee51eae1eee245af77e90333.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Cervo\.android\build-cache\8cefddc8811e3290801de12f1d2f20443a575806\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d547135a5a4b307ffe01a647ca5edf7d85ed3d3e\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_7ca8e9cb732794484e48cbcbb17a6106fbea74fe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.9.1\84b4b7d1c4a238e7899972b7446c250691e65f1f\okhttp-3.9.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="84b4b7d1c4a238e7899972b7446c250691e65f1f">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\okhttp-3.9.1_a747c0e74a60e563e31967ecbd80e560f93dca95.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\8cefddc8811e3290801de12f1d2f20443a575806\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_d547135a5a4b307ffe01a647ca5edf7d85ed3d3e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.gradle\caches\modules-2\files-2.1\com.google.zxing\core\3.3.0\73c49077166faa4c3c0059c5f583d1d7bd1475fe\core-3.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="73c49077166faa4c3c0059c5f583d1d7bd1475fe">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\core-3.3.0_bdff48b2cb8a36e80c5d337058d58d815f386658.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.4.0_4cc61463cb8616e9f1bf60ee8bfceeaeb524d67e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\473af877f0645dee3730c4e21f4b637846b23061\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b8b26b28aae0ba8e2db55ad9fe0ebc770530c5ef">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_caf9c0a76f15a7c69fa6ea45c151be7fe39d9df7.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/iem/AndroidStudioProjects/pokecard_android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_7e188a8dd6ae95b933c2fcdf6ab439193942f623/classes.dex" />
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_73629a035d0e893cb490bc20748e4dcbb772faec\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\6fd8c632476f5b411fffcf08ca86c169e980761e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_4b7e6ee7dba2c9d0d3d73a2d0c23c4309b240915.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.2\f8d87f15b94b8d74e7ccf61d7eedb558811cdb30\converter-gson-2.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.2_ded2adaab2af1610f2c19b54dcc5bce5e7149566.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.9.1\36e71ab9e903fc4d1b4a58d80572a91d9fd60caf\logging-interceptor-3.9.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="36e71ab9e903fc4d1b4a58d80572a91d9fd60caf">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\logging-interceptor-3.9.1_739cbe47d3aaf3a9bff78d3a324c9b9982117995.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_b5c80cc9d3d19d447c1ea1070ae0865cc1959bbf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\6dca905f85f0d1d24739567d7d0582ecb7dd5ea6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_f4200e95cf8519540cf778c0cd4cfeb9c2bcf0ff.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\f9d5d1e5f15517ef2a5037a9dca3bbfea232900e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="53e8932b1ac8c7dfc35cfeda1f9efbc9822ceaf3">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_d3c03b7b529af8a765b981372d8f24257796e926.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\a213a271916e7fea771f7b2fcf5ecdf3ae81605f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="807751a24cf96566fd8675517c94d8463cf364db">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_6da312fc633b800b4f0061fdc70700391bea745b.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="48d2be1fb1cffe7e5240f8f8f31d069a1b1faac3">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_5a42f1256c7be01e080427c6451c9557ccb82132\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\d1d0f83915311d41d6e8e4a08bfd427981c2a0eb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="252896ce41f2a84a2849e29235e66098be7d12ee">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_3762e013e4d7bf1b65f436b42a5c551724822519.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\dc1fce2e67d44f41cad410e321e86dff0f7fddb4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_a1d4252dc2233cc86510f53a57f6b1887a55918b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Cervo\.android\build-cache\199ee8c3aa85f1d2d9e99a43a25e96aaff2ce4e3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\Cervo\Documents\DEV\pokecard_android\app\build\intermediates\pre-dexed\debug\classes_2f34af3319117ad06f7f96751ff45e8b4ebdd877.jar" />
     </item>
 
 </items>

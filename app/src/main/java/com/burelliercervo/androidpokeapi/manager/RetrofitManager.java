@@ -1,6 +1,5 @@
 package com.burelliercervo.androidpokeapi.manager;
 
-import com.burelliercervo.androidpokeapi.model.User;
 import com.burelliercervo.androidpokeapi.service.PokeapiService;
 
 import java.util.concurrent.TimeUnit;
@@ -18,7 +17,6 @@ public class RetrofitManager {
 
     private PokeapiService retrofitContent;
     private static final String API_URL = "http://antoinecervo.com/pokecardAPI/";
-    private User actualUser;
 
     public PokeapiService initRetrofit() {
         Retrofit.Builder mBuilder =

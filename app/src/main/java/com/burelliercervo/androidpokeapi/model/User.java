@@ -1,21 +1,18 @@
 package com.burelliercervo.androidpokeapi.model;
 
 /**
- * Created by iem on 09/03/2018.
+ * Created by Cervo on 26/03/2018.
  */
 
 public class User {
-    private int userId;
+    private int id;
+    private String[] pokelist;
+    private static final User ourInstance = new User();
 
-    public User(int userId){
-        this.userId = userId;
+    public static User getInstance() {
+        return ourInstance;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
+    private User() {
     }
 }

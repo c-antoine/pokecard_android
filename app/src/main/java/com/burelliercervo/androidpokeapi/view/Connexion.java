@@ -70,8 +70,8 @@ public class Connexion extends AppCompatActivity {
             connexionfailed.setVisibility(View.VISIBLE);
         }
 
-        String url1 = "https://pokeapi.co/api/v2/pokedex/1/";
-//        new RetrieveFeedTask().execute(url1);
+//        String url1 = "https://pokeapi.co/api/v2/pokedex/1/";
+////        new RetrieveFeedTask().execute(url1);
 
         Button buttonList = (Button) findViewById(R.id.btnGotolist);
         buttonList.setOnClickListener(new View.OnClickListener() {
@@ -97,7 +97,8 @@ public class Connexion extends AppCompatActivity {
                     public void onCompleted(
                             JSONObject json_object,
                             GraphResponse response) {
-                        Intent intent = new Intent(Connexion.this, UserProfile.class);
+                        Intent intent = new Intent(Connexion.this, MainActivity.class);
+                        //Ajouter le singleton de l'utilisateur
                         intent.putExtra("userProfile", json_object.toString());
                         startActivity(intent);
                     }
