@@ -25,9 +25,13 @@ public class ListCard extends AppCompatActivity {
 
     MyListAdapter myListAdapter;
     private ListView mListView;
-    private List<Pokemon> pokemons = new ArrayList<>();
     private int offset = 0;
     private ListPokemonsTask listPokemonsTask;
+    private List<Pokemon> pokemons = new ArrayList<>();
+
+    public void initComponent(){
+        this.listPokemonsTask = new ListPokemonsTask();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +40,7 @@ public class ListCard extends AppCompatActivity {
         initComponent();
 
         this.listPokemonsTask.execute("1");
-        this.afficherPokemons(pokemons);
+//        this.afficherPokemons();
 
 //        Button btnTest = (Button) findViewById(R.id.btnTest);
 //        btnTest.setOnClickListener(new View.OnClickListener() {
@@ -46,9 +50,7 @@ public class ListCard extends AppCompatActivity {
 //        });
     }
 
-    public void initComponent(){
-        this.listPokemonsTask = new ListPokemonsTask();
-    }
+
 
     public void afficherPokemons(List<Pokemon> PokemonsList) {
 

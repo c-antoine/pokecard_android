@@ -2,8 +2,10 @@ package com.burelliercervo.androidpokeapi.service;
 
 import android.os.AsyncTask;
 
+import com.burelliercervo.androidpokeapi.manager.PokemonManager;
 import com.burelliercervo.androidpokeapi.manager.RetrofitManager;
 import com.burelliercervo.androidpokeapi.model.Pokemon;
+import com.burelliercervo.androidpokeapi.view.ListCard;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,9 +21,16 @@ import retrofit2.Response;
 public class ListPokemonsTask extends AsyncTask<String,Void,List<Pokemon>> {
 
     private RetrofitManager retrofitManager;
+    private PokemonManager pokemonManager;
+    private List<Pokemon> pokemons = new ArrayList<>();
 
     public ListPokemonsTask(){
+        this.pokemonManager = this.pokemonManager.getInstance();
         this.retrofitManager = new RetrofitManager();
+    }
+
+    public List<Pokemon> getPokemons(){
+        return this.pokemons;
     }
 
     @Override
@@ -47,9 +56,7 @@ public class ListPokemonsTask extends AsyncTask<String,Void,List<Pokemon>> {
     @Override
     protected void onPostExecute(List<Pokemon> Pokemons) {
         super.onPostExecute(Pokemons);
-//        afficherPokemons(Pokemons);
+        this.pokemonManager.setPokemons(Pokemons);
     }
-
-
 
 }
