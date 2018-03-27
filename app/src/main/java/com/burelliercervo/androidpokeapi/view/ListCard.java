@@ -108,7 +108,29 @@ public class ListCard extends AppCompatActivity {
 
         protected void onPreExecute() {
             this.dialog.setMessage("loading...");
+            this.dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            this.dialog.setMax(100);
+            this.dialog.setProgress(0);
             this.dialog.show();
+            final int totalProgressTime = 100;
+            final Thread t = new Thread() {
+                @Override
+                public void run() {
+                    int jumpTime = 0;
+
+                    while(jumpTime < totalProgressTime) {
+                        try {
+                            sleep(200);
+                            jumpTime += 5;
+                            dialog.setProgress(jumpTime);
+                        } catch (InterruptedException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            };
+            t.start();
         }
 
         @Override
@@ -139,6 +161,9 @@ public class ListCard extends AppCompatActivity {
         Retrofit retrofit = mBuilder.client(httpClient).build();
         return retrofit.create(PokeapiService.class);
     }
+
+
+
 
 
 }
