@@ -36,13 +36,14 @@ public class ListCard extends AppCompatActivity {
         initComponent();
 
         this.listPokemonsTask.execute("1");
+        this.afficherPokemons(pokemons);
 
-        Button btnTest = (Button) findViewById(R.id.btnTest);
-        btnTest.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-            }
-        });
+//        Button btnTest = (Button) findViewById(R.id.btnTest);
+//        btnTest.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//
+//            }
+//        });
     }
 
     public void initComponent(){

@@ -22,6 +22,8 @@ import com.facebook.login.widget.LoginButton;
 
 import org.json.JSONObject;
 
+import static android.content.Context.CONNECTIVITY_SERVICE;
+
 public class Connexion extends AppCompatActivity {
     CallbackManager callbackManager;
 /*

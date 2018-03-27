@@ -89,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
             response = new JSONObject(jsondata);
             Bundle bundle = new Bundle();
             bundle.putString("userID", response.get("id").toString());
+            this.fragmentListCard.setArguments(bundle);
+
             // set Fragmentclass Arguments
 
         } catch(Exception e){

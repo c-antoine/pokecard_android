@@ -49,4 +49,7 @@ public class ListPokemonsTask extends AsyncTask<String,Void,List<Pokemon>> {
         super.onPostExecute(Pokemons);
 //        afficherPokemons(Pokemons);
     }
+
+
+
 }
