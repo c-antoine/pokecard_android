@@ -1,8 +1,8 @@
 package com.burelliercervo.androidpokeapi.view;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 
+import android.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import com.burelliercervo.androidpokeapi.R;
 
 public abstract class BaseActivity extends AppCompatActivity {

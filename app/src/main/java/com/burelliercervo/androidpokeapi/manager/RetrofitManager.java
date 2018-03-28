@@ -3,6 +3,7 @@ package com.burelliercervo.androidpokeapi.manager;
 import android.app.Application;
 
 import com.burelliercervo.androidpokeapi.service.IPokeapiService;
+import com.google.gson.GsonBuilder;
 
 import java.util.concurrent.TimeUnit;
 
@@ -26,26 +27,28 @@ public class RetrofitManager extends Application{
         initRetrofit();
     }
 
-
-    public IPokeapiService initRetrofit() {
-        Retrofit.Builder mBuilder =
-                new Retrofit.Builder()
-                        .baseUrl(API_URL)
-                        .addConverterFactory(GsonConverterFactory.create());
-
+    private void initRetrofit() {
         OkHttpClient.Builder okBuilder = new OkHttpClient.Builder();
 
-        //if (BuildConfig.DEBUG) {
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
 
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        // set your desired log level
+        // log for debug
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
         okBuilder.addInterceptor(logging);
-        //}
-        okBuilder.readTimeout(1, TimeUnit.MINUTES);
-//          pokemons = IPokeapiService.listPokemon(20, offset);
+
         OkHttpClient httpClient = okBuilder.build();
-        Retrofit retrofit = mBuilder.client(httpClient).build();
-        return retrofit.create(IPokeapiService.class);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(API_URL)
+                .addConverterFactory(GsonConverterFactory.create(new GsonBuilder()
+                        .setDateFormat("yyyy-MM-dd HH:mm:ss")
+                        .serializeNulls()
+                        .create()))
+                .client(httpClient)
+                .build();
+
+        retrofitContent = retrofit.create(IPokeapiService.class);
     }
 
     public static IPokeapiService getRetrofitContent() {

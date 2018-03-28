@@ -1,5 +1,8 @@
 package com.burelliercervo.androidpokeapi.manager;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import com.burelliercervo.androidpokeapi.model.Pokemon;
 import com.burelliercervo.androidpokeapi.model.PokemonWs;
 
@@ -13,6 +16,7 @@ import retrofit2.Response;
 public class PokemonManager {
     private static PokemonManager instance;
     private List<Pokemon> pokemons = new ArrayList<>();
+    private Thread runtimePokemonForUser;
 
     public List<Pokemon> getPokemons() {
         return pokemons;
@@ -34,14 +38,15 @@ public class PokemonManager {
     }
 
     public void getPokemonsForUser(final IPokemonWs listener){
-        new Thread(new Runnable() {
+        runtimePokemonForUser = new Thread(new Runnable() {
             @Override
             public void run() {
-                Call<Pokemon> call = RetrofitManager.getRetrofitContent().listPokemon(10);
+                Call<PokemonWs> call = RetrofitManager.getRetrofitContent().listPokemon(10);
                 try {
-                    Response<Pokemon> response = call.execute();
+                    Response<PokemonWs> response = call.execute();
                     if (response.isSuccessful()) {
-                        listener.onSuccess(response.body().getPokemonsArrayList());
+                        instance.setPokemons(pokemons);
+                        listener.onSuccess(response.body());
                     } else {
                         listener.onError();
                     }
@@ -50,6 +55,7 @@ public class PokemonManager {
                     listener.onError();
                 }
             }
-        }).start();
+        });
+        runtimePokemonForUser.start();
     }
 }
