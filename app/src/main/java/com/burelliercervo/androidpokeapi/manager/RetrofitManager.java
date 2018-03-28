@@ -1,6 +1,8 @@
 package com.burelliercervo.androidpokeapi.manager;
 
-import com.burelliercervo.androidpokeapi.service.PokeapiService;
+import android.app.Application;
+
+import com.burelliercervo.androidpokeapi.service.IPokeapiService;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,12 +15,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by iem on 09/03/2018.
  */
 
-public class RetrofitManager {
+public class RetrofitManager extends Application{
 
-    private PokeapiService retrofitContent;
+    public static IPokeapiService retrofitContent;
     private static final String API_URL = "http://antoinecervo.com/pokecardAPI/";
 
-    public PokeapiService initRetrofit() {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        initRetrofit();
+    }
+
+
+    public IPokeapiService initRetrofit() {
         Retrofit.Builder mBuilder =
                 new Retrofit.Builder()
                         .baseUrl(API_URL)
@@ -33,18 +42,14 @@ public class RetrofitManager {
         okBuilder.addInterceptor(logging);
         //}
         okBuilder.readTimeout(1, TimeUnit.MINUTES);
-//          pokemons = PokeapiService.listPokemon(20, offset);
+//          pokemons = IPokeapiService.listPokemon(20, offset);
         OkHttpClient httpClient = okBuilder.build();
         Retrofit retrofit = mBuilder.client(httpClient).build();
-        return retrofit.create(PokeapiService.class);
+        return retrofit.create(IPokeapiService.class);
     }
 
-    public PokeapiService getRetrofitContent() {
+    public static IPokeapiService getRetrofitContent() {
         return retrofitContent;
-    }
-
-    public void setRetrofitContent(PokeapiService retrofitContent) {
-        this.retrofitContent = retrofitContent;
     }
 
 }

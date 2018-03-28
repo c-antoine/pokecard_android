@@ -12,7 +12,7 @@ import com.burelliercervo.androidpokeapi.R;
  * Created by iem on 02/03/2018.
  */
 
-public class FragmentProfil extends Fragment {
+public class FragmentProfil extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -52,7 +52,7 @@ public class PokeListAdapter extends BaseAdapter {
         if (view == null) {
             // Liaison XML avec l'objet View
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            view = layoutInflater.inflate(R.layout.list_item_pokemon, parent, false);
+            view = layoutInflater.inflate(R.layout.adapter_item_pokemon, parent, false);
 
             //  Liaison tampon view
             itemHolder = new ItemHolder();

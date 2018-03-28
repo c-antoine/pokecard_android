@@ -1,9 +1,14 @@
 package com.burelliercervo.androidpokeapi.manager;
 
 import com.burelliercervo.androidpokeapi.model.Pokemon;
+import com.burelliercervo.androidpokeapi.model.PokemonWs;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Response;
 
 public class PokemonManager {
     private static PokemonManager instance;
@@ -26,5 +31,25 @@ public class PokemonManager {
             instance = new PokemonManager();
         }
         return instance;
+    }
+
+    public void getPokemonsForUser(final IPokemonWs listener){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Call<Pokemon> call = RetrofitManager.getRetrofitContent().listPokemon(10);
+                try {
+                    Response<Pokemon> response = call.execute();
+                    if (response.isSuccessful()) {
+                        listener.onSuccess(response.body().getPokemonsArrayList());
+                    } else {
+                        listener.onError();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    listener.onError();
+                }
+            }
+        }).start();
     }
 }

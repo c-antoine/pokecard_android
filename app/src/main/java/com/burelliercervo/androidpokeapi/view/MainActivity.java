@@ -24,7 +24,7 @@ import org.json.JSONObject;
  * Created by iem on 02/03/2018.
  */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private FragmentListCard fragmentListCard;
     private FragmentProfil fragmentProfil;
@@ -37,16 +37,16 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_accueil:
-                    showFragment(fragmentListCard);
+                    changeFragment(fragmentListCard);
                     return true;
                 case R.id.navigation_pokelist0:
-                    showFragment(fragmentProfil);
+                    changeFragment(fragmentProfil);
                     return true;
                 case R.id.navigation_pokelist1:
-                    showFragment(fragmentProfil);
+                    changeFragment(fragmentProfil);
                     return true;
                 case R.id.navigation_pokelist2:
-                    showFragment(fragmentProfil);
+                    changeFragment(fragmentProfil);
                     return true;
             }
             return false;
@@ -88,7 +88,8 @@ public class MainActivity extends AppCompatActivity {
         try {
             response = new JSONObject(jsondata);
             Bundle bundle = new Bundle();
-            bundle.putString("userID", response.get("id").toString());
+            bundle.putString("userID", "10");
+//            bundle.putString("userID", response.get("id").toString());
             this.fragmentListCard.setArguments(bundle);
 
             // set Fragmentclass Arguments

@@ -22,8 +22,6 @@ import com.facebook.login.widget.LoginButton;
 
 import org.json.JSONObject;
 
-import static android.content.Context.CONNECTIVITY_SERVICE;
-
 public class Connexion extends AppCompatActivity {
     CallbackManager callbackManager;
 /*
@@ -73,17 +71,17 @@ public class Connexion extends AppCompatActivity {
         }
 
 //        String url1 = "https://pokeapi.co/api/v2/pokedex/1/";
-////        new RetrieveFeedTask().execute(url1);
+//        new RetrieveFeedTask().execute(url1);
 
-        Button buttonList = (Button) findViewById(R.id.btnGotolist);
-        buttonList.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //t.setText(param[0]);
-                Intent intent = new Intent(Connexion.this, ListCard.class);
-
-                startActivity(intent);
-            }
-        });
+//        Button buttonList = (Button) findViewById(R.id.btnGotolist);
+//        buttonList.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                //t.setText(param[0]);
+//                Intent intent = new Intent(Connexion.this, ListCard.class);
+//
+//                startActivity(intent);
+//            }
+//        });
     }
 
     @Override
