@@ -63,7 +63,7 @@ public class FragmentListCard extends BaseFragment {
 
             @Override
             public void onError() {
-
+                //Yolo
             }
         });
     }

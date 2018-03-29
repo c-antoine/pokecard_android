@@ -66,6 +66,8 @@ public class MainActivity extends BaseActivity {
 
         //Attribuer au fragment les informations de l'utilisateur
         getDataFromConnexion();
+
+//        changeFragment(fragmentListCard);
     }
 
     public void iniFragment(){

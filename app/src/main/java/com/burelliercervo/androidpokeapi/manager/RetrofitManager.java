@@ -30,6 +30,8 @@ public class RetrofitManager extends Application{
     private void initRetrofit() {
         OkHttpClient.Builder okBuilder = new OkHttpClient.Builder();
 
+        okBuilder.connectTimeout(30, TimeUnit.SECONDS);
+        okBuilder.readTimeout(30, TimeUnit.SECONDS);
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         // set your desired log level

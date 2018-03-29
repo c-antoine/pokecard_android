@@ -25,7 +25,7 @@ public interface IPokeapiService {
  //   Call<PokemonWs> listPokemon();
 
     @GET("?action=cardlist&")
-    Call<PokemonWs> listPokemon(@Query("user")int user);
+    Call<Pokemon> listPokemon(@Query("user")int user);
 
     @GET("?action=details&")
     Call<Pokemon> Pokemon(@Query("card")int id_card);
