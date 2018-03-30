@@ -56,13 +56,14 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedinstanceState){
         super.onCreate(savedinstanceState);
+        iniFragment();
+
         setContentView(R.layout.fragment_container);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         //Créer les instances des fragments
-        iniFragment();
 
         //Attribuer au fragment les informations de l'utilisateur
         getDataFromConnexion();
@@ -71,7 +72,7 @@ public class MainActivity extends BaseActivity {
     }
 
     public void iniFragment(){
-        this.fragmentListCard = new FragmentListCard();
+        this.fragmentListCard = FragmentListCard.getInstanceFragment();
         this.fragmentProfil = new FragmentProfil();
     }
 

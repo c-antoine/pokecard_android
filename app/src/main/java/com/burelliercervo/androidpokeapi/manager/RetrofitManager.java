@@ -20,6 +20,8 @@ public class RetrofitManager extends Application{
 
     public static IPokeapiService retrofitContent;
     private static final String API_URL = "http://antoinecervo.com/pokecardAPI/";
+    private static final String API_URL_TEST = "http://lionel.banand.free.fr/";
+
 
     @Override
     public void onCreate() {
@@ -49,6 +51,7 @@ public class RetrofitManager extends Application{
                         .create()))
                 .client(httpClient)
                 .build();
+
 
         retrofitContent = retrofit.create(IPokeapiService.class);
     }

@@ -16,6 +16,8 @@ import com.burelliercervo.androidpokeapi.model.PokemonWs;
 
 import java.util.ArrayList;
 
+import static okhttp3.internal.Internal.instance;
+
 /**
  * Created by iem on 02/03/2018.
  */
@@ -24,9 +26,15 @@ public class FragmentListCard extends BaseFragment {
     RecyclerView recyclerView;
     PokemonListAdapter adapter;
     ArrayList<Pokemon> pokemons = new ArrayList<>();
+    public static FragmentListCard instanceFragment;
     private View v;
 
-    public FragmentListCard(){};
+    public static FragmentListCard getInstanceFragment() {
+        if (instanceFragment == null) {
+            instanceFragment = new FragmentListCard();
+        }
+        return instanceFragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,8 +59,9 @@ public class FragmentListCard extends BaseFragment {
         PokemonManager.getInstance().getPokemonsForUser(new IPokemonWs() {
             @Override
             public void onSuccess(PokemonWs pokemonsWs) {
-                FragmentListCard.this.pokemons = pokemonsWs.getPokemonArrayList();
-                context.runOnUiThread(new Runnable() {
+                FragmentListCard.getInstanceFragment().pokemons = pokemonsWs.getPokemons();
+
+                getInstanceFragment().context.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         adapter.notifyDataSetChanged();

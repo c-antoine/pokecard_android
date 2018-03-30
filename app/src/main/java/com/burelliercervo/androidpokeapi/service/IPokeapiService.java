@@ -21,11 +21,12 @@ public interface IPokeapiService {
 
 
 
- //   @GET("lp_iem/result.json")
- //   Call<PokemonWs> listPokemon();
+//    @GET("lp_iem/result.json")
+//    Call<PokemonWs> listPokemon();
 
-    @GET("?action=cardlist&")
-    Call<Pokemon> listPokemon(@Query("user")int user);
+    @GET("?action=cardlist&user=10")
+    Call<PokemonWs> listPokemon();
+    //@Query("user")int user
 
     @GET("?action=details&")
     Call<Pokemon> Pokemon(@Query("card")int id_card);

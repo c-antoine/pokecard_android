@@ -41,12 +41,14 @@ public class PokemonManager {
         runtimePokemonForUser = new Thread(new Runnable() {
             @Override
             public void run() {
-                Call<Pokemon> call = RetrofitManager.getRetrofitContent().listPokemon(10);
+                Call<PokemonWs> call = RetrofitManager.getRetrofitContent().listPokemon();
                 try {
-                    Response<Pokemon> response = call.execute();
+                    Response<PokemonWs> response = call.execute();
                     if (response.isSuccessful()) {
-                        pokemons = response.body();
-                        instance.setPokemons(pokemons);
+                        PokemonWs pokemonWs = response.body();
+//                        listener.onSuccess(response.body().getPokemonArrayList());
+//                        pokemons = response.body().getPokemons();
+//                        instance.setPokemons(pokemons);
                         listener.onSuccess(response.body());
                     } else {
                         listener.onError();
