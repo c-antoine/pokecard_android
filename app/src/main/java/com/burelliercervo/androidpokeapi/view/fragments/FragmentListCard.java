@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.burelliercervo.androidpokeapi.R;
 import com.burelliercervo.androidpokeapi.adapter.ItemClickSupport;
-import com.burelliercervo.androidpokeapi.adapter.PokemonListAdapter;
+import com.burelliercervo.androidpokeapi.adapter.PokelistAdapter;
 import com.burelliercervo.androidpokeapi.manager.IFragmentManager;
 import com.burelliercervo.androidpokeapi.manager.PokemonManager;
 import com.burelliercervo.androidpokeapi.model.Pokemon;
@@ -25,7 +25,7 @@ import java.util.List;
 
 public class FragmentListCard extends BaseFragment {
     RecyclerView recyclerView;
-    PokemonListAdapter adapter;
+    PokelistAdapter adapter;
     List<Pokemon> pokemons = new ArrayList<>();
     public static FragmentListCard instanceFragment;
     private View v;
@@ -59,9 +59,9 @@ public class FragmentListCard extends BaseFragment {
 
         actualUser = User.getInstance();
 
-        recyclerView = (RecyclerView) v.findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) v.findViewById(R.id.recycler_viewPokelist);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new PokemonListAdapter(pokemons, context);
+        adapter = new PokelistAdapter(pokemons, context);
 
         ItemClickSupport.addTo(recyclerView).setOnItemClickListener(
                 new ItemClickSupport.OnItemClickListener() {

@@ -11,6 +11,7 @@ import com.burelliercervo.androidpokeapi.manager.IFragmentManager;
 import com.burelliercervo.androidpokeapi.model.User;
 import com.burelliercervo.androidpokeapi.view.fragments.FragmentDetails;
 import com.burelliercervo.androidpokeapi.view.fragments.FragmentListCard;
+import com.burelliercervo.androidpokeapi.view.fragments.FragmentPokedex;
 import com.burelliercervo.androidpokeapi.view.fragments.FragmentProfil;
 
 import org.json.JSONObject;
@@ -24,6 +25,7 @@ public class MainActivity extends BaseActivity implements IFragmentManager {
     private FragmentListCard fragmentListCard;
     private FragmentDetails fragmentDetails;
     private FragmentProfil fragmentProfil;
+    private FragmentPokedex fragmentPokedex;
     private User actualUser;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -35,13 +37,10 @@ public class MainActivity extends BaseActivity implements IFragmentManager {
                 case R.id.navigation_accueil:
                     changeFragment(fragmentListCard);
                     return true;
-                case R.id.navigation_pokelist0:
-                    changeFragment(fragmentProfil);
+                case R.id.navigation_pokedex:
+                    changeFragment(fragmentPokedex);
                     return true;
-                case R.id.navigation_pokelist1:
-                    changeFragment(fragmentProfil);
-                    return true;
-                case R.id.navigation_pokelist2:
+                case R.id.navigation_profil:
                     changeFragment(fragmentProfil);
                     return true;
             }
@@ -72,6 +71,7 @@ public class MainActivity extends BaseActivity implements IFragmentManager {
         this.fragmentListCard = FragmentListCard.getInstanceFragment();
         this.fragmentProfil = new FragmentProfil();
         this.fragmentDetails = FragmentDetails.getInstanceFragment();
+        this.fragmentPokedex = FragmentPokedex.getInstanceFragment();
     }
 
     @Override

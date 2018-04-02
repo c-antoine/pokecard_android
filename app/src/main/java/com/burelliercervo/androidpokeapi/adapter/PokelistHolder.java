@@ -7,14 +7,14 @@ import android.widget.TextView;
 
 import com.burelliercervo.androidpokeapi.R;
 
-public class PokemonHolder extends RecyclerView.ViewHolder {
+public class PokelistHolder extends RecyclerView.ViewHolder {
 
     public TextView name;
     public TextView xp;
     public TextView type;
     public ImageView sprite;
 
-    public PokemonHolder(View view) {
+    public PokelistHolder(View view) {
         super(view);
         name = (TextView) view.findViewById(R.id.pokeName);
         xp = (TextView) view.findViewById(R.id.pokeXp);

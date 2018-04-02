@@ -12,31 +12,28 @@ import com.burelliercervo.androidpokeapi.model.Pokemon;
 
 import java.util.List;
 
-public class PokemonListAdapter extends RecyclerView.Adapter<PokemonHolder> {
+public class PokedexAdapter extends RecyclerView.Adapter<PokedexHolder> {
 
     private List<Pokemon> pokemons;
     private Context context;
 
-    public PokemonListAdapter(List<Pokemon> pokemonList, Context context){
+    public PokedexAdapter(List<Pokemon> pokemonList, Context context){
         this.pokemons = pokemonList;
         this.context = context;
     }
 
     @Override
-    public PokemonHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        int layout = R.layout.adapter_item_pokemon;
+    public PokedexHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        int layout = R.layout.adapter_pokedex;
         LayoutInflater li = LayoutInflater.from(parent.getContext());
         View v = li.inflate(layout, parent, false);
-        return new PokemonHolder(v);
+        return new PokedexHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(PokemonHolder holder, int position) {
-        holder.name.setText(pokemons.get(position).getName());
-        holder.xp.setText(pokemons.get(position).getXp());
-        holder.type.setText(pokemons.get(position).getType());
+    public void onBindViewHolder(PokedexHolder holder, int position) {
         Glide.with(context)
-                .load(pokemons.get(position).getSprite())
+                .load(pokemons.get(position).getSpriteWithID(pokemons.get(position).getId()))
                 .into(holder.sprite);
     }
 
