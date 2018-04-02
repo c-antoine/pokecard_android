@@ -1,11 +1,6 @@
 package com.burelliercervo.androidpokeapi.view.fragments;
 
-import android.annotation.SuppressLint;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +11,6 @@ import com.bumptech.glide.Glide;
 import com.burelliercervo.androidpokeapi.R;
 import com.burelliercervo.androidpokeapi.manager.PokemonManager;
 import com.burelliercervo.androidpokeapi.model.Pokemon;
-import com.squareup.picasso.Picasso;
-
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.List;
 
 public class FragmentDetails extends BaseFragment {
     private int pokemonID;
