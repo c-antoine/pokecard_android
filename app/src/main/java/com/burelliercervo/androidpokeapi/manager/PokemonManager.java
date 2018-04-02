@@ -1,10 +1,6 @@
 package com.burelliercervo.androidpokeapi.manager;
 
-import android.util.Log;
-import android.widget.Toast;
-
 import com.burelliercervo.androidpokeapi.model.Pokemon;
-import com.burelliercervo.androidpokeapi.model.PokemonWs;
 import com.burelliercervo.androidpokeapi.service.IPokeapiService;
 
 import java.io.IOException;

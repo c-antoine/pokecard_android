@@ -14,8 +14,6 @@ import com.burelliercervo.androidpokeapi.adapter.PokemonListAdapter;
 import com.burelliercervo.androidpokeapi.manager.IFragmentManager;
 import com.burelliercervo.androidpokeapi.manager.PokemonManager;
 import com.burelliercervo.androidpokeapi.model.Pokemon;
-import com.burelliercervo.androidpokeapi.manager.IPokemonWs;
-import com.burelliercervo.androidpokeapi.model.PokemonWs;
 import com.burelliercervo.androidpokeapi.model.User;
 
 import java.util.ArrayList;

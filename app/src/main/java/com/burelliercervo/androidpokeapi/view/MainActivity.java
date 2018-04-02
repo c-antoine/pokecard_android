@@ -6,17 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.burelliercervo.androidpokeapi.R;
 import com.burelliercervo.androidpokeapi.model.User;
-import com.burelliercervo.androidpokeapi.view.FragmentListCard;
-import com.burelliercervo.androidpokeapi.view.FragmentProfil;
-import com.squareup.picasso.Picasso;
+import com.burelliercervo.androidpokeapi.view.activities.BaseActivity;
+import com.burelliercervo.androidpokeapi.view.fragments.FragmentListCard;
+import com.burelliercervo.androidpokeapi.view.fragments.FragmentProfil;
 
 import org.json.JSONObject;
 

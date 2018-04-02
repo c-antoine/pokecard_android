@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.burelliercervo.androidpokeapi.R;
-import com.burelliercervo.androidpokeapi.manager.IPokemon;
 import com.burelliercervo.androidpokeapi.manager.PokemonManager;
 import com.burelliercervo.androidpokeapi.model.Pokemon;
 import com.squareup.picasso.Picasso;
