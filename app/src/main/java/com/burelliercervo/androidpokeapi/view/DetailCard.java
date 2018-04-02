@@ -3,12 +3,10 @@ package com.burelliercervo.androidpokeapi.view;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.burelliercervo.androidpokeapi.R;
-import com.burelliercervo.androidpokeapi.model.Pokemon;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
@@ -19,7 +17,7 @@ public class DetailCard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_card);
 
-        TextView tvLevel = (TextView) findViewById(R.id.tvLevel);
+        TextView tvLevel = (TextView) findViewById(R.id.tvXp);
         //tvLevel =
         final Intent intent = getIntent();
 

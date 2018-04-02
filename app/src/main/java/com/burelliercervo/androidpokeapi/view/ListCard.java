@@ -12,7 +12,7 @@
 //
 //import com.burelliercervo.androidpokeapi.adapter.MyListAdapter;
 //import com.burelliercervo.androidpokeapi.service.ListPokemonsTask;
-//import com.burelliercervo.androidpokeapi.model.Pokemon;
+//import com.burelliercervo.androidpokeapi.model.getPokemon;
 //import com.burelliercervo.androidpokeapi.R;
 //
 //import java.util.ArrayList;
@@ -27,7 +27,7 @@
 //    private ListView mListView;
 //    private int offset = 0;
 //    private ListPokemonsTask listPokemonsTask;
-//    private List<Pokemon> pokemons = new ArrayList<>();
+//    private List<getPokemon> pokemons = new ArrayList<>();
 //
 //    public void initComponent(){
 //        this.listPokemonsTask = new ListPokemonsTask();
@@ -52,13 +52,13 @@
 //
 //
 //
-//    public void afficherPokemons(List<Pokemon> PokemonsList) {
+//    public void afficherPokemons(List<getPokemon> PokemonsList) {
 //
 //        myListAdapter = new MyListAdapter(PokemonsList, this);
 //        mListView = (ListView) findViewById(R.id.listview);
 //        mListView.setAdapter(myListAdapter);
 //        myListAdapter.notifyDataSetChanged();
-//        Toast.makeText(this,"nombre de Pokemon : "+PokemonsList.size(),Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this,"nombre de getPokemon : "+PokemonsList.size(),Toast.LENGTH_SHORT).show();
 //
 //        mListView.setClickable(true);
 //        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

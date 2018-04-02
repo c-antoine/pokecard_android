@@ -11,7 +11,7 @@
 //
 //import com.bumptech.glide.Glide;
 //import com.burelliercervo.androidpokeapi.R;
-//import com.burelliercervo.androidpokeapi.model.Pokemon;
+//import com.burelliercervo.androidpokeapi.model.getPokemon;
 //
 //import java.util.List;
 //
@@ -20,10 +20,10 @@
 // */
 //
 //public class MyListAdapter extends BaseAdapter {
-//    final List<Pokemon> pokemons;
+//    final List<getPokemon> pokemons;
 //    private Context context;
 //
-//    public MyListAdapter(List<Pokemon> pokemons, Context context) {
+//    public MyListAdapter(List<getPokemon> pokemons, Context context) {
 //        this.pokemons = pokemons;
 //        this.context = context;
 //    }

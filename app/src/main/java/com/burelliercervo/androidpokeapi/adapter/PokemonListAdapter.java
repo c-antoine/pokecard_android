@@ -2,6 +2,7 @@ package com.burelliercervo.androidpokeapi.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,27 +12,28 @@ import com.burelliercervo.androidpokeapi.R;
 import com.burelliercervo.androidpokeapi.model.Pokemon;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class PokemonListAdapter extends RecyclerView.Adapter<PokemonViewHolder> {
+public class PokemonListAdapter extends RecyclerView.Adapter<PokemonHolder> {
 
-    private ArrayList<Pokemon> pokemons;
+    private List<Pokemon> pokemons;
     private Context context;
 
-    public PokemonListAdapter(ArrayList<Pokemon> pokemonArrayList, Context context){
-        this.pokemons = pokemonArrayList;
+    public PokemonListAdapter(List<Pokemon> pokemonList, Context context){
+        this.pokemons = pokemonList;
         this.context = context;
     }
 
     @Override
-    public PokemonViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public PokemonHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         int layout = R.layout.adapter_item_pokemon;
         LayoutInflater li = LayoutInflater.from(parent.getContext());
         View v = li.inflate(layout, parent, false);
-        return new PokemonViewHolder(v);
+        return new PokemonHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(PokemonViewHolder holder, int position) {
+    public void onBindViewHolder(PokemonHolder holder, int position) {
         holder.name.setText(pokemons.get(position).getName());
         holder.xp.setText(pokemons.get(position).getXp());
         holder.type.setText(pokemons.get(position).getType());
@@ -42,7 +44,10 @@ public class PokemonListAdapter extends RecyclerView.Adapter<PokemonViewHolder> 
 
     @Override
     public int getItemCount() {
-        //return 5;
         return pokemons.size();
+    }
+
+    public void updateData(List<Pokemon> pokemons) {
+        this.pokemons = pokemons;
     }
 }

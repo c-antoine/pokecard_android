@@ -7,12 +7,22 @@ package com.burelliercervo.androidpokeapi.model;
 public class User {
     private int id;
     private String[] pokelist;
-    private static final User ourInstance = new User();
+    private static User userInstance;
 
     public static User getInstance() {
-        return ourInstance;
+        if (userInstance == null) {
+            userInstance = new User();
+        }
+        return userInstance;
     }
 
-    private User() {
+    public User() {}
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 }

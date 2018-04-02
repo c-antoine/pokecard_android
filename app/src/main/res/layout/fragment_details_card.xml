@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <ImageView
+            android:id="@+id/imgSprite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/pokecard" />
+
+        <TextView
+            android:id="@+id/tvPokemonName"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:text="PokemonName"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@id/imgSprite"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <Button
+            android:id="@+id/SpinnerChoice"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginRight="5dp"
+            android:text="Exchange this pokemon"
+            app:layout_constraintTop_toBottomOf="@id/imgSprite"
+            app:layout_constraintRight_toRightOf="parent"
+            ></Button>
+
+        <TextView
+            android:id="@+id/tvXp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xp : "
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/SpinnerChoice"
+            app:layout_constraintTop_toBottomOf="@id/SpinnerChoice" />
+
+        <TextView
+            android:id="@+id/tvXpData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/tvXp"
+            app:layout_constraintTop_toTopOf="@id/tvXp"
+            />
+
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ability : "
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/tvXp"
+            app:layout_constraintTop_toBottomOf="@id/tvXp" />
+
+        <TextView
+            android:id="@+id/tvTypeData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/tvType"
+            app:layout_constraintTop_toTopOf="@id/tvType"
+            />
+
+        <TextView
+            android:id="@+id/tvHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Defense : "
+            app:layout_constraintLeft_toLeftOf="@id/tvType"
+            app:layout_constraintTop_toBottomOf="@id/tvType" />
+
+        <TextView
+            android:id="@+id/tvHeightData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/tvHeight"
+            app:layout_constraintTop_toTopOf="@id/tvHeight"
+            />
+
+        <TextView
+            android:id="@+id/tvWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Speed : "
+            app:layout_constraintLeft_toLeftOf="@id/tvHeight"
+            app:layout_constraintTop_toBottomOf="@id/tvHeight" />
+
+        <TextView
+            android:id="@+id/tvWeightData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/tvWeight"
+            app:layout_constraintTop_toTopOf="@id/tvWeight"
+            />
+
+        <TextView
+            android:id="@+id/tvAttack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Attack : "
+            app:layout_constraintLeft_toLeftOf="@id/tvWeight"
+            app:layout_constraintTop_toBottomOf="@id/tvWeight" />
+
+        <TextView
+            android:id="@+id/tvAttackData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/tvAttack"
+            app:layout_constraintTop_toTopOf="@id/tvAttack"
+            />
+
+        <ImageView
+            android:id="@+id/imageViewSprite"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@id/tvPokemonName"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <View
+            android:id="@+id/SeparationLine"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#646464"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/tvAttack"
+            />
+
+        <TextView
+            android:id="@+id/tvEvolution"
+            android:layout_width="210dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:text="Evolutions : "
+            android:textColor="#111111"
+            app:layout_constraintTop_toBottomOf="@id/SeparationLine"
+            />
+
+        <ImageView
+            android:id="@+id/imageViewEvolutionSprite1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@mipmap/ic_launcher"
+
+            app:layout_constraintTop_toBottomOf="@id/tvEvolution"
+
+            />
+
+        <ImageView
+            android:id="@+id/imageViewEvolutionSprite2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="70dp"
+            android:src="@mipmap/ic_launcher"
+
+            app:layout_constraintTop_toBottomOf="@id/tvEvolution"
+            app:layout_constraintLeft_toRightOf="@id/imageViewEvolutionSprite1"
+
+
+
+            />
+
+        <ImageView
+            android:id="@+id/imageViewEvolutionSprite3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="70dp"
+            android:src="@mipmap/ic_launcher"
+
+            app:layout_constraintTop_toBottomOf="@id/tvEvolution"
+            app:layout_constraintLeft_toRightOf="@id/imageViewEvolutionSprite2"
+
+            />
+
+        <View
+            android:id="@+id/SeparationLine2"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#646464"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/imageViewEvolutionSprite2"
+            />
+
+        <TextView
+            android:id="@+id/tvAbilities"
+            android:layout_width="210dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:text="Abilities : "
+            android:textColor="#111111"
+            app:layout_constraintTop_toBottomOf="@id/SeparationLine2"
+            />
+
+        <TextView
+            android:id="@+id/tvAbilitiesData1"
+            android:layout_width="50dp"
+            android:layout_height="10dp"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAbilities"
+            />
+
+        <TextView
+            android:id="@+id/tvAbilitiesData2"
+            android:layout_width="50dp"
+            android:layout_height="10dp"
+            app:layout_constraintLeft_toRightOf="@id/tvAbilitiesData1"
+            app:layout_constraintTop_toBottomOf="@id/tvAbilities"
+            />
+
+        <TextView
+            android:id="@+id/tvAbilitiesData3"
+            android:layout_width="50dp"
+            android:layout_height="10dp"
+            app:layout_constraintLeft_toRightOf="@id/tvAbilitiesData2"
+            app:layout_constraintTop_toBottomOf="@id/tvAbilities"
+            />
+
+
+
+    </android.support.constraint.ConstraintLayout>
