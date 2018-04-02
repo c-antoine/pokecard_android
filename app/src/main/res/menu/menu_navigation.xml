@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_accueil"
+        android:icon="@drawable/menu_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/navigation_pokelist0"
+        android:icon="@drawable/menu_list"
+        android:title="List0" />
+
+    <item
+        android:id="@+id/navigation_pokelist1"
+        android:icon="@drawable/menu_list"
+        android:title="List1" />
+
+    <item
+        android:id="@+id/navigation_pokelist2"
+        android:icon="@drawable/menu_list"
+        android:title="List2" />
+
+</menu>

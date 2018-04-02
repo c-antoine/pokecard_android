@@ -9,7 +9,7 @@
 
 
     <ListView
-        android:id="@+id/listview"
+        android:id="@+id/listviewActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -37,11 +37,11 @@
         android:text="Your cards"
         android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/btnTest"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:text="test"/>
+    <!--<Button-->
+        <!--android:id="@+id/btnTest"-->
+        <!--android:layout_width="70dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:text="test"/>-->
 </RelativeLayout>
 
 

@@ -13,19 +13,17 @@ public class Pokemon {
     private String height;
     private String weight;
     private String sprite;
+    private String[] abilities;
 
-    public String getSprite() {
-        return sprite;
+    public String[] getAbilities() {
+        return abilities;
     }
 
-    public void setSprite(String sprite) {
-        this.sprite = sprite;
+    public void setAbilities(String[] abilities) {
+        this.abilities = abilities;
     }
 
-    public Pokemon(String name, String xp, String[] type){
-        this.name = name;
-        this.xp = xp;
-        this.type = type;
+    public Pokemon(){
     }
 
     public void setId(int id) {
@@ -62,6 +60,35 @@ public class Pokemon {
         return weight;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public void setXp(String xp) {
+        this.xp = xp;
+    }
 
+    public void setType(String[] type) {
+        this.type = type;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public String getSprite() {
+        return sprite;
+    }
+
+    public void setSprite(String sprite) {
+        this.sprite = sprite;
+    }
+
+    public Pokemon getPokemon(){
+        return this;
+    }
 }

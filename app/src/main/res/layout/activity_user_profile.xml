@@ -1,38 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.burelliercervo.androidpokeapi.view.UserProfile">
+    android:layout_height="match_parent">
+
+<ImageView
+    android:id="@+id/backgroundPic"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@mipmap/pokemon_wall"
+    android:adjustViewBounds="true"
+    app:layout_constraintTop_toTopOf="parent"
+    />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/profilePic"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/profilePic"
-        android:id="@+id/UserName"
-        android:text="username"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/email"
-        android:layout_below="@+id/UserName"
-        android:text="username"/>
+        android:id="@+id/profilePic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backgroundPic"/>
 
-    <TextView
-        android:id="@+id/UserId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/email"
-        android:layout_toEndOf="@+id/profilePic"
-        android:layout_toRightOf="@+id/profilePic"
-        android:text="TextView" />
+<TextView
+    android:id="@+id/UserName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="username"
+    app:layout_constraintTop_toBottomOf="@id/profilePic"
+    app:layout_constraintLeft_toLeftOf="parent"
+    />
+<TextView
+    android:id="@+id/email"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="email"
+    app:layout_constraintTop_toBottomOf="@id/UserName"
+    />
 
-</RelativeLayout>
+<TextView
+    android:id="@+id/UserId"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="TextView"
+    app:layout_constraintTop_toBottomOf="@id/email"
+    app:layout_constraintLeft_toLeftOf="parent"
+    />
+
+
+</android.support.constraint.ConstraintLayout>

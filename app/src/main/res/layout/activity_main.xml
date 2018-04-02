@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".view.Connexion">
+    tools:context=".view.activities.Connexion">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -54,8 +54,6 @@
             android:layout_alignStart="@+id/login_button"
             android:text="Made By"
             android:textSize="25sp" />
-
-
 
         <TextView
             android:id="@+id/tvAntoineC"
