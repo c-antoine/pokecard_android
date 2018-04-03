@@ -19,7 +19,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitManager extends Application{
 
     public static IPokeapiService retrofitContent;
-    private static final String API_URL = "http://antoinecervo.com/pokecardAPI/";
+    private static final String API_ONLINE_URL = "http://antoinecervo.com/pokecardAPI/";
+    private static final String API_LOCAL_URL = "http://192.168.42.125/pokecardAPI/";
     private static final String API_URL_TEST = "http://lionel.banand.free.fr/";
 
 
@@ -44,7 +45,7 @@ public class RetrofitManager extends Application{
         OkHttpClient httpClient = okBuilder.build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(API_URL)
+                .baseUrl(API_ONLINE_URL)
                 .addConverterFactory(GsonConverterFactory.create(new GsonBuilder()
                         .setDateFormat("yyyy-MM-dd HH:mm:ss")
                         .serializeNulls()

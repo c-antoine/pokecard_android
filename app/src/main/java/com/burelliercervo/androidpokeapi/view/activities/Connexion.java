@@ -88,6 +88,9 @@ public class Connexion extends AppCompatActivity {
                         try {
                             actualUser = User.getInstance();
                             int userID = json_object.getInt("id");
+                            actualUser.setPicture(json_object.getString("data"));
+                            actualUser.setName(json_object.getString("name"));
+                            actualUser.setEmail(json_object.getString("email"));
                             actualUser.setId(userID);
                         } catch (JSONException e) {
                             e.printStackTrace();
