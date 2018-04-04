@@ -1,13 +1,21 @@
 package com.burelliercervo.androidpokeapi.view.activities;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.PixelFormat;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
+import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.burelliercervo.androidpokeapi.R;
 import com.burelliercervo.androidpokeapi.model.User;
@@ -26,6 +34,8 @@ import org.json.JSONObject;
 public class Connexion extends AppCompatActivity {
     CallbackManager callbackManager;
     private User actualUser;
+    private LoginButton loginButton;
+    private NetworkInfo networkInfo;
 
 
     @Override
@@ -33,42 +43,39 @@ public class Connexion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         callbackManager = CallbackManager.Factory.create();
-        LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
-        loginButton.setReadPermissions("email");
-        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                getUserDetails(loginResult);
-            }
+        clickLogin();
+
+        actualUser = User.getInstance();
+        initLoginElements();
+
+    }
+
+    public void initLoginElements(){
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        networkInfo = connectivityManager.getActiveNetworkInfo();
+        this.loginButton = (LoginButton) findViewById(R.id.login_button);
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onCancel() {
-                // App code
-            }
+            public void onClick(View v) {
+                //Toast.makeText(getApplicationContext(), "Vous n'êtes pas connecté à internet", Toast.LENGTH_LONG).show();
+                if(networkInfo != null && networkInfo.isAvailable() && networkInfo.isConnected()) {
+                    boolean wifi = networkInfo.getType() == ConnectivityManager.TYPE_WIFI;
+                    Log.d("NetworkState", "L'interface de connexion active est du Wifi : " + wifi);
+                    boolean cellular = networkInfo.getType() == ConnectivityManager.TYPE_MOBILE;
+                    Log.d("NetworkState", "L'interface de connexion active est du Wifi : " + cellular);
 
-            @Override
-            public void onError(FacebookException exception) {
-                // App code
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Vous n'êtes pas connecté à internet", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
-        actualUser = User.getInstance();
-        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-
-        if(networkInfo != null && networkInfo.isAvailable() && networkInfo.isConnected()) {
-            boolean wifi = networkInfo.getType() == ConnectivityManager.TYPE_WIFI;
-            Log.d("NetworkState", "L'interface de connexion active est du Wifi : " + wifi);
-            boolean cellular = networkInfo.getType() == ConnectivityManager.TYPE_MOBILE;
-            Log.d("NetworkState", "L'interface de connexion active est du Wifi : " + cellular);
-            TextView connexionfailed = (TextView)findViewById(R.id.connexionfailed);
-            connexionfailed.setVisibility(View.INVISIBLE);
-        }
-        else{
-            TextView connexionfailed = (TextView)findViewById(R.id.connexionfailed);
-            connexionfailed.setVisibility(View.VISIBLE);
-        }
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -125,4 +132,29 @@ public class Connexion extends AppCompatActivity {
         super.onStop();
         //recharger les dernières informations précédemment enregistrées dans un fichier local ou une BDD locale, lorsque l’application est mise en arrière-plan ou arrêtée.
     }
+
+
+    protected void clickLogin(){
+        LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
+        loginButton.setReadPermissions("email");
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                getUserDetails(loginResult);
+            }
+
+            @Override
+            public void onCancel() {
+                // App code
+            }
+
+            @Override
+            public void onError(FacebookException exception) {
+                // App code
+            }
+        });
+    }
+
+
+
 }

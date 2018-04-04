@@ -23,6 +23,8 @@ import com.burelliercervo.androidpokeapi.model.User;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.content.ContentValues.TAG;
+
 /**
  * Created by iem on 02/03/2018.
  */

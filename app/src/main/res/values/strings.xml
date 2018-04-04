@@ -2,4 +2,5 @@
     <string name="app_name">pokecard</string>
     <string name="facebook_app_id">180499189177751</string>
     <string name="fb_login_protocol_scheme">fb180499189177751</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
 </resources>

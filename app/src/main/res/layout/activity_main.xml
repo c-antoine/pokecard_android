@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorBackground"
     tools:context=".view.activities.Connexion">
 
     <RelativeLayout
@@ -43,7 +44,8 @@
             android:layout_alignParentStart="true"
             android:inputType="textPersonName"
             android:text="Vous n'êtes connecté à aucun réseau wifi ou 3G"
-            android:textSize="33px" />
+            android:textSize="33px"
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/tvMadeBy"
@@ -81,9 +83,12 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            app:srcCompat="@mipmap/pokecard" />
+            app:srcCompat="@mipmap/pokecard" /><![CDATA[
+
+        />
 
 
+    ]]>
     </RelativeLayout>
 
 
