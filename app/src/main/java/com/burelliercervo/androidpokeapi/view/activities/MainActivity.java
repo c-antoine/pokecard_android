@@ -1,5 +1,6 @@
 package com.burelliercervo.androidpokeapi.view.activities;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,7 +9,7 @@ import android.view.MenuItem;
 
 import com.burelliercervo.androidpokeapi.R;
 import com.burelliercervo.androidpokeapi.manager.IFragmentManager;
-import com.burelliercervo.androidpokeapi.model.User;
+import com.burelliercervo.androidpokeapi.model.SUser;
 import com.burelliercervo.androidpokeapi.view.fragments.FragmentDetails;
 import com.burelliercervo.androidpokeapi.view.fragments.FragmentListCard;
 import com.burelliercervo.androidpokeapi.view.fragments.FragmentPokedex;
@@ -26,7 +27,8 @@ public class MainActivity extends BaseActivity implements IFragmentManager {
     private FragmentDetails fragmentDetails;
     private FragmentProfil fragmentProfil;
     private FragmentPokedex fragmentPokedex;
-    private User actualUser;
+    private SUser actualSUser;
+    private ActionBar actionBar;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -35,12 +37,15 @@ public class MainActivity extends BaseActivity implements IFragmentManager {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_accueil:
+                    setToolBarTitle("Liste de cartes");
                     changeFragment(fragmentListCard);
                     return true;
                 case R.id.navigation_pokedex:
+                    setToolBarTitle("Pokedex");
                     changeFragment(fragmentPokedex);
                     return true;
                 case R.id.navigation_profil:
+                    setToolBarTitle("Profil");
                     changeFragment(fragmentProfil);
                     return true;
             }
@@ -52,8 +57,8 @@ public class MainActivity extends BaseActivity implements IFragmentManager {
     protected void onCreate(Bundle savedinstanceState){
         super.onCreate(savedinstanceState);
         iniFragment();
-        actualUser = User.getInstance();
-
+        actualSUser = SUser.getInstance();
+        actionBar = this.getActionBar();
         setContentView(R.layout.fragment_container);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
@@ -68,10 +73,10 @@ public class MainActivity extends BaseActivity implements IFragmentManager {
     }
 
     public void iniFragment(){
-        this.fragmentListCard = FragmentListCard.getInstanceFragment();
+        this.fragmentListCard = new FragmentListCard();
         this.fragmentProfil = new FragmentProfil();
-        this.fragmentDetails = FragmentDetails.getInstanceFragment();
-        this.fragmentPokedex = FragmentPokedex.getInstanceFragment();
+        this.fragmentDetails = new FragmentDetails();
+        this.fragmentPokedex = new FragmentPokedex();
     }
 
     @Override
@@ -87,13 +92,13 @@ public class MainActivity extends BaseActivity implements IFragmentManager {
         Intent intent = getIntent();
         String jsondata = intent.getStringExtra("data");
 //        jsondata.get(0);
-//        actualUser.setId(Integer.parseInt(jsondata));
+//        actualSUser.setId(Integer.parseInt(jsondata));
 //        Log.w("Jsondata", jsondata);
         JSONObject response, profile_pic_data, profile_pic_url;
         try {
             response = new JSONObject(jsondata);
             Bundle bundle = new Bundle();
-            bundle.putString("userID", String.valueOf(actualUser.getId()));
+            bundle.putString("userID", String.valueOf(actualSUser.getId()));
 //            bundle.putString("userID", response.get("id").toString());
             this.fragmentListCard.setArguments(bundle);
         } catch(Exception e){

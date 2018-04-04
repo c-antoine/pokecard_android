@@ -7,18 +7,19 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.burelliercervo.androidpokeapi.R;
 import com.burelliercervo.androidpokeapi.adapter.ItemClickSupport;
 import com.burelliercervo.androidpokeapi.adapter.PokelistAdapter;
 import com.burelliercervo.androidpokeapi.manager.IFragmentManager;
-import com.burelliercervo.androidpokeapi.manager.PokemonManager;
+import com.burelliercervo.androidpokeapi.manager.SNetworkManager;
+import com.burelliercervo.androidpokeapi.manager.SPokemonManager;
 import com.burelliercervo.androidpokeapi.model.Pokemon;
-import com.burelliercervo.androidpokeapi.model.User;
+import com.burelliercervo.androidpokeapi.model.SUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,16 +34,20 @@ public class FragmentListCard extends BaseFragment {
     List<Pokemon> pokemons = new ArrayList<>();
     public static FragmentListCard instanceFragment;
     private View v;
-    private IFragmentManager dataPasser;
-    private User actualUser;
-    ProgressDialog dialog;
+    private SPokemonManager SPokemonManager;
+    private Boolean alreadyLooped = false;
 
-    public static FragmentListCard getInstanceFragment() {
-        if (instanceFragment == null) {
-            instanceFragment = new FragmentListCard();
-        }
-        return instanceFragment;
-    }
+    private IFragmentManager dataPasser;
+    private SUser actualSUser;
+    ProgressDialog dialog;
+    private SNetworkManager SNetworkManager;
+
+//    public static FragmentListCard getInstanceFragment() {
+//        if (instanceFragment == null) {
+//            instanceFragment = new FragmentListCard();
+//        }
+//        return instanceFragment;
+//    }
 
     @Override
     public void onAttach(Context context) {
@@ -58,12 +63,11 @@ public class FragmentListCard extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        final PokemonManager p = PokemonManager.getInstance();
+        SPokemonManager = SPokemonManager.getInstance();
         dialog = new ProgressDialog(context);
         v = inflater.inflate(R.layout.fragment_recycler_listpokemons, container, false);
 
-        actualUser = User.getInstance();
-        actualUser.setId(2147483647);
+        actualSUser = SUser.getInstance();
         recyclerView = (RecyclerView) v.findViewById(R.id.recycler_viewPokelist);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new PokelistAdapter(pokemons, context);
@@ -82,16 +86,24 @@ public class FragmentListCard extends BaseFragment {
 
         recyclerView.setClickable(true);
 
-        v = afficherPokemons(v, actualUser);
+        SNetworkManager = SNetworkManager.getInstance();
+        if(SNetworkManager.isOnline()){
+            v = afficherPokemons(v, actualSUser);
+        }
+        else{
+            Toast.makeText(this.getActivity(), "Vous n'êtes pas connecté à internet", Toast.LENGTH_LONG).show();
+        }
         return v;
     }
 
-    public View afficherPokemons(View v, final User u){
-        loadPop();
+    public View afficherPokemons(View v, final SUser u){
+        if(!alreadyLooped){
+            loadPop();
+        }
         new Thread(new Runnable() {
             @Override
             public void run() {
-                pokemons = PokemonManager.getInstance().getAllPokemon(actualUser.getId());
+                pokemons = SPokemonManager.getInstance().getAllPokemon(actualSUser.getId());
                 dialog.dismiss();
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
@@ -108,11 +120,11 @@ public class FragmentListCard extends BaseFragment {
 
     public void loadPop(){
         this.dialog.setMessage("loading...");
-        this.dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        this.dialog.setMax(100);
-        this.dialog.setProgress(0);
+        this.dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        //this.dialog.setMax(100);
+        //this.dialog.setProgress(0);
         this.dialog.show();
-        final int totalProgressTime = 100;
+        /*final int totalProgressTime = 100;
         final Thread t = new Thread() {
             @Override
             public void run() {
@@ -120,8 +132,8 @@ public class FragmentListCard extends BaseFragment {
 
                 while(jumpTime < totalProgressTime) {
                     try {
-                        sleep(200);
-                        jumpTime += 5;
+                        sleep(100);
+                        jumpTime += 30;
                         dialog.setProgress(jumpTime);
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
@@ -131,7 +143,8 @@ public class FragmentListCard extends BaseFragment {
 //                dialog.dismiss();
             }
         };
-        t.start();
+        t.start();*/
+        alreadyLooped = true;
     }
 
     Handler handler = new Handler() {

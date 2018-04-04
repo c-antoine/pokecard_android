@@ -36,17 +36,15 @@ import java.util.Map;
 public class DonateActivity extends AppCompatActivity {
 
     private final static int REQUEST_CODE = 0;
-    private final static String BRAINTREE_TAG = "";
-    private final static String send_payment_details = "http://antoinecervo.com/pokecardAPI/paymentToken.php";
-    private final static String get_tokenPath = "";
+    private final static String BRAINTREE_TAG = "Braintree";
+    private final static String send_payment_details = "http://10.0.2.2:8080/BraintreePaymentsServer/mycheckout.php";
+    private final static String get_tokenPath = "http://10.0.2.2:8080/BraintreePaymentsServer/main.php";
     private String token;
     private String amount;
     private HashMap<String, String> paramHash;
     private Button btnPay;
     private EditText etAmount;
     private LinearLayout llHolder;
-
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

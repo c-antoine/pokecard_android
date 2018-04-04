@@ -12,27 +12,18 @@
         android:supportsRtl="true"
         android:name=".manager.RetrofitManager"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activities.Connexion">
+        <activity android:name=".view.activities.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".view.activities.Connexion">
         </activity>
         <activity android:name=".view.activities.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-
         <activity android:name=".view.activities.DonateActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data

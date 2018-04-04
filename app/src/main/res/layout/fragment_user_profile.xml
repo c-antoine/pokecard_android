@@ -2,42 +2,56 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<ImageView
-    android:id="@+id/backgroundPic"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:src="@mipmap/pokemon_wall"
-    android:adjustViewBounds="true"
-    app:layout_constraintTop_toTopOf="parent"
-    />
+<!--<ImageView-->
+    <!--android:id="@+id/backgroundPic"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:src="@mipmap/pokemon_wall"-->
+    <!--android:adjustViewBounds="true"-->
+    <!--app:layout_constraintTop_toTopOf="parent"-->
+    <!--/>-->
 
-    <ImageView
-        android:id="@+id/imgPicture"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+    <TextView
+        android:id="@+id/profileTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Profil Utilisateur"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/backgroundPic"/>
-
-<TextView
-    android:id="@+id/tvNomPrenom"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="username"
-    app:layout_constraintTop_toBottomOf="@id/imgPicture"
-    app:layout_constraintLeft_toLeftOf="parent"
-    />
-<TextView
-    android:id="@+id/tvEmail"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="email"
-    app:layout_constraintTop_toBottomOf="@id/tvNomPrenom"
-    />
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <ImageView
+        android:id="@+id/pPicture"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileTitle"
+        />
+    <TextView
+        android:id="@+id/pNomPrenom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:text="username"
+        app:layout_constraintTop_toBottomOf="@id/profileTitle"
+        app:layout_constraintLeft_toRightOf="@id/pPicture"
+        />
+    <TextView
+        android:id="@+id/pEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="email"
+        app:layout_constraintLeft_toLeftOf="@+id/pNomPrenom"
+        app:layout_constraintTop_toBottomOf="@id/pNomPrenom"
+        app:layout_constraintLeft_toRightOf="@id/pPicture"
+        />
 
 
 

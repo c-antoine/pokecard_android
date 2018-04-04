@@ -9,46 +9,45 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.burelliercervo.androidpokeapi.R;
-import com.burelliercervo.androidpokeapi.model.User;
-import com.squareup.picasso.Picasso;
-
-import org.json.JSONObject;
+import com.burelliercervo.androidpokeapi.model.SUser;
 
 /**
  * Created by iem on 02/03/2018.
  */
 
 public class FragmentProfil extends BaseFragment {
-    public static FragmentProfil instanceFragment;
+//    public static FragmentProfil instanceFragment;
     private TextView tvEmail;
     private TextView tvNomPrenom;
     private ImageView imgPicture;
-    private User actualUser;
+    private SUser actualSUser;
     private View v;
 
-    public static FragmentProfil getInstanceFragment() {
-        if (instanceFragment == null) {
-            instanceFragment = new FragmentProfil();
-        }
-        return instanceFragment;
-    }
+//    public static FragmentProfil getInstanceFragment() {
+//        if (instanceFragment == null) {
+//            instanceFragment = new FragmentProfil();
+//        }
+//        return instanceFragment;
+//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        v = inflater.inflate(R.layout.fragment_profile, container, false);
-        iniComponent();
-        User.getInstance().getPicture();
-//        Picasso.with(context).load(User.getInstance().getPicture()).into(imgPicture);
-        tvEmail.setText(User.getInstance().getEmail());
-        tvNomPrenom.setText(User.getInstance().getName());
+        v = inflater.inflate(R.layout.fragment_user_profile, container, false);
+        iniComponent(v);
+
+        actualSUser = SUser.getInstance();
+        tvEmail.setText(actualSUser.getEmail());
+        tvNomPrenom.setText(actualSUser.getName());
+        Glide.with(context)
+                .load(actualSUser.getPicture())
+                .into(imgPicture);
         return v;
     }
 
-    public void iniComponent(){
-        tvNomPrenom = (TextView) v.findViewById(R.id.tvNomPrenom);
-        imgPicture = (ImageView) v.findViewById(R.id.imgPicture);
-        tvEmail = (TextView) v.findViewById(R.id.tvEmail);
+    public void iniComponent(View v){
+        tvNomPrenom = (TextView) v.findViewById(R.id.pNomPrenom);
+        imgPicture = (ImageView) v.findViewById(R.id.pPicture);
+        tvEmail = (TextView) v.findViewById(R.id.pEmail);
     }
 }

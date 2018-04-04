@@ -9,12 +9,12 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.burelliercervo.androidpokeapi.R;
-import com.burelliercervo.androidpokeapi.manager.PokemonManager;
+import com.burelliercervo.androidpokeapi.manager.SPokemonManager;
 import com.burelliercervo.androidpokeapi.model.Pokemon;
 
 public class FragmentDetails extends BaseFragment {
     private int pokemonID;
-    public static FragmentDetails instanceFragment;
+//    public static FragmentDetails instanceFragment;
     private View v;
     private Pokemon pokemon;
     private ImageView imageViewSprite;
@@ -28,17 +28,17 @@ public class FragmentDetails extends BaseFragment {
     private TextView tvAbilitiesData2;
     private TextView tvAbilitiesData3;
 
-    public static FragmentDetails getInstanceFragment() {
-        if (instanceFragment == null) {
-            instanceFragment = new FragmentDetails();
-        }
-        return instanceFragment;
-    }
+//    public static FragmentDetails getInstanceFragment() {
+//        if (instanceFragment == null) {
+//            instanceFragment = new FragmentDetails();
+//        }
+//        return instanceFragment;
+//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final PokemonManager p = PokemonManager.getInstance();
+        final SPokemonManager p = SPokemonManager.getInstance();
         v = inflater.inflate(R.layout.fragment_details_card, container, false);
         initViewDetails(v);
 
@@ -74,7 +74,7 @@ public class FragmentDetails extends BaseFragment {
         textViewTypeData.setText(pokemon.getType());
         textViewHeightData.setText(pokemon.getHeight());
         textViewWeightData.setText(pokemon.getWeight());
-        textViewAttackData.setText("Yolo");
+//        textViewAttackData.setText("Yolo");
         tvAbilitiesData1.setText("Manger");
         tvAbilitiesData2.setText("Courrir");
         tvAbilitiesData3.setText("Dormir");
@@ -84,7 +84,7 @@ public class FragmentDetails extends BaseFragment {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Pokemon pokemon = PokemonManager.getInstance().getPokemonDetails(pokemonID);
+                final Pokemon pokemon = SPokemonManager.getInstance().getPokemonDetails(pokemonID);
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

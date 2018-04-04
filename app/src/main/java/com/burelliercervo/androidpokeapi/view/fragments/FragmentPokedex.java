@@ -2,19 +2,17 @@ package com.burelliercervo.androidpokeapi.view.fragments;
 
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.burelliercervo.androidpokeapi.R;
-import com.burelliercervo.androidpokeapi.adapter.ItemClickSupport;
 import com.burelliercervo.androidpokeapi.adapter.PokedexAdapter;
-import com.burelliercervo.androidpokeapi.adapter.PokelistAdapter;
-import com.burelliercervo.androidpokeapi.manager.PokemonManager;
+import com.burelliercervo.androidpokeapi.manager.SNetworkManager;
+import com.burelliercervo.androidpokeapi.manager.SPokemonManager;
 import com.burelliercervo.androidpokeapi.model.Pokemon;
-import com.burelliercervo.androidpokeapi.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,44 +23,34 @@ public class FragmentPokedex extends BaseFragment {
     private PokedexAdapter pokedexAdapter;
     private View v;
     private List<Pokemon> pokemons = new ArrayList<>();
+    private SNetworkManager SNetworkManager;
 
-    public static FragmentPokedex getInstanceFragment() {
-        if (instanceFragment == null) {
-            instanceFragment = new FragmentPokedex();
-        }
-        return instanceFragment;
-    }
+//    public static FragmentPokedex getInstanceFragment() {
+//        if (instanceFragment == null) {
+//            instanceFragment = new FragmentPokedex();
+//        }
+//        return instanceFragment;
+//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        final PokemonManager p = PokemonManager.getInstance();
-//        async = getArguments().getBoolean("async", false);
+        final SPokemonManager p = SPokemonManager.getInstance();
         View v = inflater.inflate(R.layout.fragment_recycler_pokedex, container, false);
 
         pokedexRecycler = (RecyclerView) v.findViewById(R.id.recycler_viewPokedex);
         pokedexRecycler.setLayoutManager(new GridLayoutManager(getContext(), 4));
         pokedexAdapter = new PokedexAdapter(pokemons, context);
-
-//        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 4);
-//        pokedexRecyclerView.setLayoutManager(layoutManager);
-
-//        ItemClickSupport.addTo(pokedexRecycler).setOnItemClickListener(
-//                new ItemClickSupport.OnItemClickListener() {
-//                    @Override
-//                    public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-//                        Pokemon selectedPokemon = pokemons.get(position);
-//                        passData(String.valueOf(selectedPokemon.getId()));
-//                    }
-//                }
-//        );
-
         pokedexRecycler.setAdapter(pokedexAdapter);
 
-//        pokedexRecycler.setClickable(true);
-
-        v = afficherPokedex(v);
+        SNetworkManager = SNetworkManager.getInstance();
+        if(SNetworkManager.isOnline()){
+            v = afficherPokedex(v);
+        }
+        else{
+            Toast.makeText(this.getActivity(), "Vous n'êtes pas connecté à internet", Toast.LENGTH_LONG).show();
+        }
 
         return v;
     }
@@ -71,7 +59,7 @@ public class FragmentPokedex extends BaseFragment {
         new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    pokemons = PokemonManager.getInstance().getPokedex();
+                    pokemons = SPokemonManager.getInstance().getPokedex();
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
