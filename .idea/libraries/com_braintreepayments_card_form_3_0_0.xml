@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.braintreepayments:card-form-3.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/card-form-3.0.0.aar/a28690a829f2b7ad9ea7929e2be505ff/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/card-form-3.0.0.aar/a28690a829f2b7ad9ea7929e2be505ff/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.braintreepayments/card-form/3.0.0/a7a3621b3935f54d67503a6ced39ac3b57de183a/card-form-3.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

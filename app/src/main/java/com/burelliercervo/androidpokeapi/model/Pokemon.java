@@ -6,39 +6,32 @@ package com.burelliercervo.androidpokeapi.model;
 
 public class Pokemon {
 
-    private String id;
+    private int id;
     private String name;
     private String xp;
     private String[] type;
     private String height;
     private String weight;
     private String sprite;
-    private String level;
+    private String[] abilities;
 
-    public String getSprite() {
-        return sprite;
+    public String[] getAbilities() {
+        return abilities;
     }
 
-    public void setSprite(String sprite) {
-        this.sprite = sprite;
+    public void setAbilities(String[] abilities) {
+        this.abilities = abilities;
     }
 
-    public Pokemon(String id, String name, String xp, String[] type){
+    public Pokemon(){
+        /*
+        this.sprite = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+this.id+".png";
+        */
+    }
+
+    public void setId(int id) {
         this.id = id;
-        this.name = name;
-        this.xp = xp;
-        this.type = type;
     }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
-    }
-
-
 
     public String getType() {
         int i;
@@ -49,7 +42,7 @@ public class Pokemon {
         return toReturn;
     }
 
-    public String getId(){
+    public int getId(){
         return id;
     }
 
@@ -62,10 +55,6 @@ public class Pokemon {
         return xp;
     }
 
-    public String getLevel(){
-        return level;
-    }
-
     public String getHeight(){
         return height;
     }
@@ -74,6 +63,40 @@ public class Pokemon {
         return weight;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setXp(String xp) {
+        this.xp = xp;
+    }
+
+    public void setType(String[] type) {
+        this.type = type;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public String getSprite() {
+        return sprite;
+    }
+
+    public String getSpriteWithID(int id) {
+        return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+id+".png";
+    }
 
 
+    public void setSprite(String sprite) {
+        this.sprite = sprite;
+    }
+
+    public Pokemon getPokemon(){
+        return this;
+    }
 }
