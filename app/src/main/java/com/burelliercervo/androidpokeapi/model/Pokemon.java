@@ -24,6 +24,9 @@ public class Pokemon {
     }
 
     public Pokemon(){
+        /*
+        this.sprite = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+this.id+".png";
+        */
     }
 
     public void setId(int id) {
@@ -83,6 +86,11 @@ public class Pokemon {
     public String getSprite() {
         return sprite;
     }
+
+    public String getSpriteWithID(int id) {
+        return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+id+".png";
+    }
+
 
     public void setSprite(String sprite) {
         this.sprite = sprite;

@@ -3,22 +3,17 @@
 
     <item
         android:id="@+id/navigation_accueil"
-        android:icon="@drawable/menu_home"
+        android:icon="@drawable/menu_list"
         android:title="Home" />
 
     <item
-        android:id="@+id/navigation_pokelist0"
-        android:icon="@drawable/menu_list"
-        android:title="List0" />
+        android:id="@+id/navigation_pokedex"
+        android:icon="@drawable/menu_pokedex"
+        android:title="Pokedex" />
 
     <item
-        android:id="@+id/navigation_pokelist1"
-        android:icon="@drawable/menu_list"
-        android:title="List1" />
-
-    <item
-        android:id="@+id/navigation_pokelist2"
-        android:icon="@drawable/menu_list"
+        android:id="@+id/navigation_profil"
+        android:icon="@drawable/menu_profil"
         android:title="List2" />
 
 </menu>

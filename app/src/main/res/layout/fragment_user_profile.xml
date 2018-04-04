@@ -16,7 +16,7 @@
     />
 
     <ImageView
-        android:id="@+id/profilePic"
+        android:id="@+id/imgPicture"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,29 +24,21 @@
         app:layout_constraintTop_toBottomOf="@id/backgroundPic"/>
 
 <TextView
-    android:id="@+id/UserName"
+    android:id="@+id/tvNomPrenom"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="username"
-    app:layout_constraintTop_toBottomOf="@id/profilePic"
+    app:layout_constraintTop_toBottomOf="@id/imgPicture"
     app:layout_constraintLeft_toLeftOf="parent"
     />
 <TextView
-    android:id="@+id/email"
+    android:id="@+id/tvEmail"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="email"
-    app:layout_constraintTop_toBottomOf="@id/UserName"
+    app:layout_constraintTop_toBottomOf="@id/tvNomPrenom"
     />
 
-<TextView
-    android:id="@+id/UserId"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="TextView"
-    app:layout_constraintTop_toBottomOf="@id/email"
-    app:layout_constraintLeft_toLeftOf="parent"
-    />
 
 
 </android.support.constraint.ConstraintLayout>

@@ -29,6 +29,7 @@ public interface IPokeapiService {
     @GET("?action=details&")
     Call<Pokemon> getPokemon(@Query("card")int id_card);
 
-
+    @GET("?action=pokedex")
+    Call<List<Pokemon>> getPokedex();
 
 }
