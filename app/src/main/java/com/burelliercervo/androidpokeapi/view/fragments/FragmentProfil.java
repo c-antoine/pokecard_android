@@ -9,26 +9,26 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.burelliercervo.androidpokeapi.R;
-import com.burelliercervo.androidpokeapi.model.User;
+import com.burelliercervo.androidpokeapi.model.SUser;
 
 /**
  * Created by iem on 02/03/2018.
  */
 
 public class FragmentProfil extends BaseFragment {
-    public static FragmentProfil instanceFragment;
+//    public static FragmentProfil instanceFragment;
     private TextView tvEmail;
     private TextView tvNomPrenom;
     private ImageView imgPicture;
-    private User actualUser;
+    private SUser actualSUser;
     private View v;
 
-    public static FragmentProfil getInstanceFragment() {
-        if (instanceFragment == null) {
-            instanceFragment = new FragmentProfil();
-        }
-        return instanceFragment;
-    }
+//    public static FragmentProfil getInstanceFragment() {
+//        if (instanceFragment == null) {
+//            instanceFragment = new FragmentProfil();
+//        }
+//        return instanceFragment;
+//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,11 +36,11 @@ public class FragmentProfil extends BaseFragment {
         v = inflater.inflate(R.layout.fragment_user_profile, container, false);
         iniComponent(v);
 
-        actualUser = User.getInstance();
-        tvEmail.setText(actualUser.getEmail());
-        tvNomPrenom.setText(actualUser.getName());
+        actualSUser = SUser.getInstance();
+        tvEmail.setText(actualSUser.getEmail());
+        tvNomPrenom.setText(actualSUser.getName());
         Glide.with(context)
-                .load(actualUser.getPicture())
+                .load(actualSUser.getPicture())
                 .into(imgPicture);
         return v;
     }

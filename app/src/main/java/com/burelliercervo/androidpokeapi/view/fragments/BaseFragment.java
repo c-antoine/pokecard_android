@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import com.burelliercervo.androidpokeapi.view.activities.BaseActivity;
 import com.burelliercervo.androidpokeapi.view.activities.MainActivity;
 
+//Permet d'obtenir le context depuis les fragments
+
 public abstract class BaseFragment extends Fragment {
     public BaseActivity context;
 

@@ -7,29 +7,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.burelliercervo.androidpokeapi.R;
-import com.burelliercervo.androidpokeapi.model.User;
+import com.burelliercervo.androidpokeapi.manager.SNetworkManager;
+import com.burelliercervo.androidpokeapi.model.SUser;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
-import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Connexion extends AppCompatActivity {
     CallbackManager callbackManager;
-    private User actualUser;
+    private SUser actualSUser;
     private LoginButton loginButton;
     private NetworkInfo networkInfo;
+    private SNetworkManager SNetworkManager;
     private ConnectivityManager connectivityManager;
 
 
@@ -43,32 +41,36 @@ public class Connexion extends AppCompatActivity {
         callbackManager = CallbackManager.Factory.create();
         clickLogin();
 
-        actualUser = User.getInstance();
+        actualSUser = SUser.getInstance();
         initLoginElements();
 
     }
 
     public void initLoginElements(){
 
+        SNetworkManager = SNetworkManager.getInstance();
+        SNetworkManager.setConnectivityManager((ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE));
+//        SNetworkManager.setNetworkInfo(networkInfo);
+
         connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-        networkInfo = connectivityManager.getActiveNetworkInfo();
         this.loginButton = (LoginButton) findViewById(R.id.login_button);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                networkInfo = connectivityManager.getActiveNetworkInfo();
-                if(networkInfo != null && networkInfo.isAvailable() && networkInfo.isConnected()) {
-                    boolean wifi = networkInfo.getType() == ConnectivityManager.TYPE_WIFI;
+
+                if(SNetworkManager.getNetworkInfo() != null && SNetworkManager.getNetworkInfo().isAvailable() && SNetworkManager.getNetworkInfo().isConnected()) {
+                    boolean wifi = SNetworkManager.getNetworkInfo().getType() == ConnectivityManager.TYPE_WIFI;
                     Log.d("NetworkState", "L'interface de connexion active est du Wifi : " + wifi);
-                    boolean cellular = networkInfo.getType() == ConnectivityManager.TYPE_MOBILE;
+                    boolean cellular = SNetworkManager.getNetworkInfo().getType() == ConnectivityManager.TYPE_MOBILE;
                     Log.d("NetworkState", "L'interface de connexion active est du Wifi : " + cellular);
 
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Vous n'êtes pas connecté à internet", Toast.LENGTH_LONG).show();
                 }
+
             }
         });
 
@@ -89,7 +91,7 @@ public class Connexion extends AppCompatActivity {
                             GraphResponse response) {
                         Intent intent = new Intent(Connexion.this, MainActivity.class);
                         //Ajouter le singleton de l'utilisateur
-                        actualUser.setUserData(json_object);
+                        actualSUser.setUserData(json_object);
 
                         //Debut de MainActivity
                         startActivity(intent);
