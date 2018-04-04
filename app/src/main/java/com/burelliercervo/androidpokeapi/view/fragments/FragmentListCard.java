@@ -33,6 +33,9 @@ public class FragmentListCard extends BaseFragment {
     List<Pokemon> pokemons = new ArrayList<>();
     public static FragmentListCard instanceFragment;
     private View v;
+    private PokemonManager pokemonManager;
+    private Boolean alreadyLooped = false;
+
     private IFragmentManager dataPasser;
     private User actualUser;
     ProgressDialog dialog;
@@ -58,7 +61,7 @@ public class FragmentListCard extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        final PokemonManager p = PokemonManager.getInstance();
+        pokemonManager = PokemonManager.getInstance();
         dialog = new ProgressDialog(context);
         v = inflater.inflate(R.layout.fragment_recycler_listpokemons, container, false);
 
@@ -87,7 +90,9 @@ public class FragmentListCard extends BaseFragment {
     }
 
     public View afficherPokemons(View v, final User u){
-        loadPop();
+        if(alreadyLooped==false){
+            loadPop();
+        }
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -120,8 +125,8 @@ public class FragmentListCard extends BaseFragment {
 
                 while(jumpTime < totalProgressTime) {
                     try {
-                        sleep(200);
-                        jumpTime += 5;
+                        sleep(100);
+                        jumpTime += 30;
                         dialog.setProgress(jumpTime);
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
@@ -132,6 +137,7 @@ public class FragmentListCard extends BaseFragment {
             }
         };
         t.start();
+        alreadyLooped = true;
     }
 
     Handler handler = new Handler() {

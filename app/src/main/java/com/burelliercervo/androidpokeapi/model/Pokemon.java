@@ -91,7 +91,6 @@ public class Pokemon {
         return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+id+".png";
     }
 
-
     public void setSprite(String sprite) {
         this.sprite = sprite;
     }

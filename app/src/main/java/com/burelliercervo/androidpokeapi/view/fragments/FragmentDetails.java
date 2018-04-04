@@ -74,7 +74,7 @@ public class FragmentDetails extends BaseFragment {
         textViewTypeData.setText(pokemon.getType());
         textViewHeightData.setText(pokemon.getHeight());
         textViewWeightData.setText(pokemon.getWeight());
-        textViewAttackData.setText("Yolo");
+//        textViewAttackData.setText("Yolo");
         tvAbilitiesData1.setText("Manger");
         tvAbilitiesData2.setText("Courrir");
         tvAbilitiesData3.setText("Dormir");

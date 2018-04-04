@@ -24,7 +24,8 @@
             android:layout_above="@+id/connexionfailed"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="14dp"
-            android:text="Go to list" />
+            android:text="Go to list"
+            android:visibility="invisible" />
 
         <com.facebook.login.widget.LoginButton
             android:id="@+id/login_button"
@@ -43,7 +44,8 @@
             android:layout_alignParentStart="true"
             android:inputType="textPersonName"
             android:text="Vous n'êtes connecté à aucun réseau wifi ou 3G"
-            android:textSize="33px" />
+            android:textSize="33px"
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/tvMadeBy"

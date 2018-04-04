@@ -1,5 +1,6 @@
 package com.burelliercervo.androidpokeapi.view.activities;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -27,6 +28,7 @@ public class MainActivity extends BaseActivity implements IFragmentManager {
     private FragmentProfil fragmentProfil;
     private FragmentPokedex fragmentPokedex;
     private User actualUser;
+    private ActionBar actionBar;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -35,12 +37,15 @@ public class MainActivity extends BaseActivity implements IFragmentManager {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_accueil:
+                    setToolBarTitle("Liste de cartes");
                     changeFragment(fragmentListCard);
                     return true;
                 case R.id.navigation_pokedex:
+                    setToolBarTitle("Pokedex");
                     changeFragment(fragmentPokedex);
                     return true;
                 case R.id.navigation_profil:
+                    setToolBarTitle("Profil");
                     changeFragment(fragmentProfil);
                     return true;
             }
@@ -53,7 +58,7 @@ public class MainActivity extends BaseActivity implements IFragmentManager {
         super.onCreate(savedinstanceState);
         iniFragment();
         actualUser = User.getInstance();
-
+        actionBar = this.getActionBar();
         setContentView(R.layout.fragment_container);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);

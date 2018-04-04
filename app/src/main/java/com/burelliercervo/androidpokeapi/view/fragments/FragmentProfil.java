@@ -10,9 +10,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.burelliercervo.androidpokeapi.R;
 import com.burelliercervo.androidpokeapi.model.User;
-import com.squareup.picasso.Picasso;
-
-import org.json.JSONObject;
 
 /**
  * Created by iem on 02/03/2018.
@@ -36,19 +33,21 @@ public class FragmentProfil extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        v = inflater.inflate(R.layout.fragment_profile, container, false);
-        iniComponent();
-        User.getInstance().getPicture();
-//        Picasso.with(context).load(User.getInstance().getPicture()).into(imgPicture);
-        tvEmail.setText(User.getInstance().getEmail());
-        tvNomPrenom.setText(User.getInstance().getName());
+        v = inflater.inflate(R.layout.fragment_user_profile, container, false);
+        iniComponent(v);
+
+        actualUser = User.getInstance();
+        tvEmail.setText(actualUser.getEmail());
+        tvNomPrenom.setText(actualUser.getName());
+        Glide.with(context)
+                .load(actualUser.getPicture())
+                .into(imgPicture);
         return v;
     }
 
-    public void iniComponent(){
-        tvNomPrenom = (TextView) v.findViewById(R.id.tvNomPrenom);
-        imgPicture = (ImageView) v.findViewById(R.id.imgPicture);
-        tvEmail = (TextView) v.findViewById(R.id.tvEmail);
+    public void iniComponent(View v){
+        tvNomPrenom = (TextView) v.findViewById(R.id.pNomPrenom);
+        imgPicture = (ImageView) v.findViewById(R.id.pPicture);
+        tvEmail = (TextView) v.findViewById(R.id.pEmail);
     }
 }
