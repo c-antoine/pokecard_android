@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,12 +60,10 @@ public class FragmentListCard extends BaseFragment {
 
         final PokemonManager p = PokemonManager.getInstance();
         dialog = new ProgressDialog(context);
-//        loadingPop();
         v = inflater.inflate(R.layout.fragment_recycler_listpokemons, container, false);
 
-//        actualUser = User.getInstance();
         actualUser = User.getInstance();
-//        actualUser.setId(2147483647);
+        actualUser.setId(2147483647);
         recyclerView = (RecyclerView) v.findViewById(R.id.recycler_viewPokelist);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new PokelistAdapter(pokemons, context);
@@ -88,12 +87,12 @@ public class FragmentListCard extends BaseFragment {
     }
 
     public View afficherPokemons(View v, final User u){
-//        loadPop();
+        loadPop();
         new Thread(new Runnable() {
             @Override
             public void run() {
-                loadPop();
                 pokemons = PokemonManager.getInstance().getAllPokemon(actualUser.getId());
+                dialog.dismiss();
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -129,7 +128,7 @@ public class FragmentListCard extends BaseFragment {
                         e.printStackTrace();
                     }
                 }
-                dialog.dismiss();
+//                dialog.dismiss();
             }
         };
         t.start();
