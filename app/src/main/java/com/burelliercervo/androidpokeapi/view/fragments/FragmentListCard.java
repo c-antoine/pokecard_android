@@ -64,7 +64,7 @@ public class FragmentListCard extends BaseFragment {
 
 //        actualUser = User.getInstance();
         actualUser = User.getInstance();
-        actualUser.setId(2147483647);
+//        actualUser.setId(2147483647);
         recyclerView = (RecyclerView) v.findViewById(R.id.recycler_viewPokelist);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new PokelistAdapter(pokemons, context);
@@ -88,7 +88,7 @@ public class FragmentListCard extends BaseFragment {
     }
 
     public View afficherPokemons(View v, final User u){
-        loadPop();
+//        loadPop();
         new Thread(new Runnable() {
             @Override
             public void run() {
